@@ -2,16 +2,15 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Mm]emoryCaptures/
-/[Uu]serSettings/
-/GameJam_LD52/[Ll]ibrary/
-/GameJam_LD52/ProjectSettings/
+GameJam_LD52/[Ll]ibrary/
+GameJam_LD52/[Tt]emp/
+GameJam_LD52/[Oo]bj/
+GameJam_LD52/[Bb]uild/
+GameJam_LD52/[Bb]uilds/
+GameJam_LD52/[Ll]ogs/
+GameJam_LD52/[Mm]emoryCaptures/
+GameJam_LD52/[Uu]serSettings/
+GameJam_LD52/[Ll]ibrary/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
