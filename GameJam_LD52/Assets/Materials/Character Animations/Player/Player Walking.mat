@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player
+  m_Name: Player Walking
   m_Shader: {fileID: -6465566751694194690, guid: 8e2fa4bc886fe6e488cbab72b70fd9d6,
     type: 3}
   m_Parent: {fileID: 0}
@@ -38,7 +38,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Main_Texture:
-        m_Texture: {fileID: 2800000, guid: ccbec49e5d15d1248b6ba1ff6c2a34e9, type: 3}
+        m_Texture: {fileID: 2800000, guid: fcbfeb79621eb0d42aae58ea4d2a5a3f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -56,7 +56,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha_Clipping: 0.5
+    - _Max_Frames: 6
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors: []
+    - _Speed: 6.22
+    - _Speed_in_Fps: 6
+    m_Colors:
+    - _Width_Height: {r: 3, g: 2, b: 0, a: 0}
   m_BuildTextureStacks: []
