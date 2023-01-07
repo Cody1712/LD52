@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2819515924970192727
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Water_backup
+  m_Shader: {fileID: -6465566751694194690, guid: d88e7cb5dcc8dcb4797caa5970f9cbbd,
+    type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Foam_Texture_01:
+        m_Texture: {fileID: 2800000, guid: 314b6269120c31445bd3705909d2be27, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Foam_Texture_02:
+        m_Texture: {fileID: 2800000, guid: 32df0d47b4d4ec94fb5f7eb9c9cd124a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Highlight_Texture:
+        m_Texture: {fileID: 2800000, guid: 752b90eb141ca8c4898139d0f4cec9b8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Highlight_Texture_01:
+        m_Texture: {fileID: 2800000, guid: 752b90eb141ca8c4898139d0f4cec9b8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Highlight_Texture_02:
+        m_Texture: {fileID: 2800000, guid: 5f16e5820c5dd08458aaff95aa1fe6e8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Main_Texture:
+        m_Texture: {fileID: 2800000, guid: 752b90eb141ca8c4898139d0f4cec9b8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 1
+    - _DepthColorIntensity: 0.75
+    - _DepthDistance: 3
+    - _DepthPower: 2.1
+    - _DepthStrength: 2.56
+    - _Displacement_Strength: 2
+    - _Edge_Foam_Intensity: 0.433
+    - _Edge_Size: 0.28
+    - _Foam_01_Intensity: 0.072
+    - _Foam_02_Intensity: 0.04
+    - _Highlight_Intensity: 0.58
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _Smoothness: 1
+    - _Speed: 0.1
+    - _Tiling_Foam: 28.59
+    - _Tiling_Highlight_Texture: 13.92
+    m_Colors:
+    - _DepthColor: {r: 0.15686272, g: 0.74509805, b: 0.51886547, a: 1}
+    - _Edge_Foam_Color: {r: 0.86543256, g: 0.93485224, b: 0.9811321, a: 0}
+    - _Foam_01_Color: {r: 0, g: 1, b: 0.8124628, a: 0}
+    - _Foam_02_Color: {r: 0, g: 0.7203593, b: 1, a: 1}
+    - _Highlight_Color: {r: 0.16078429, g: 0.45955542, b: 0.7921569, a: 1}
+    - _MainColor: {r: 0.13394447, g: 0.3070667, b: 0.6603774, a: 1}
+    - _Main_Color: {r: 0.16078429, g: 0.35612366, b: 0.7921569, a: 1}
+    - _Secondary_Color: {r: 0.17942327, g: 0.6037736, b: 0.44151628, a: 0}
+    - _Tiling_Highlight_Texture: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
