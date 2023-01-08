@@ -8,21 +8,69 @@ public class GameManager : Manager<GameManager>
     [SerializeField] GameObject waterPlane;
     [SerializeField] float highTideHight = 1f;
     [SerializeField] float lowTideHight = -1f;
+    Vector3 newWaterPosition;
 
     [Header("Timing")]
+    [SerializeField] float waterSinkingTime = 0.3f;
+    [SerializeField] float waterRisingTime = 0.3f;
     [SerializeField] float highTideDuration = 10f;
     [SerializeField] float lowTideDuration = 20f;
+    private bool isHighTide = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(WaitForNextTide(lowTideDuration));
     }
 
     // Update is called once per frame
     void Update()
     {
+        UpdateWaterPosition();
+        ChangeTide();
+    }
+
+    void UpdateWaterPosition()
+	{
+		if (isHighTide)
+		{
+            waterPlane.transform.position = Vector3.Slerp(waterPlane.transform.position, newWaterPosition, waterRisingTime * Time.deltaTime);
+        }
+		else
+		{
+            waterPlane.transform.position = Vector3.Slerp(waterPlane.transform.position, newWaterPosition, waterSinkingTime * Time.deltaTime);
+        }
         
+    }
+
+    void ChangeTide()
+	{
+		if (isHighTide)
+		{
+            newWaterPosition = new Vector3(waterPlane.transform.position.x, highTideHight, waterPlane.transform.position.z);
+        }
+		else
+		{
+            newWaterPosition = new Vector3(waterPlane.transform.position.x, lowTideHight, waterPlane.transform.position.z);
+        }
+	}
+
+    
+
+    IEnumerator WaitForNextTide(float duration)
+	{
+        yield return new WaitForSeconds(duration);
+        isHighTide = !isHighTide;
+
+		if (isHighTide)
+		{
+            StartCoroutine(WaitForNextTide(highTideDuration));
+        }
+		else
+		{
+            StartCoroutine(WaitForNextTide(lowTideDuration));
+        }
+
     }
 
 #if UNITY_EDITOR
