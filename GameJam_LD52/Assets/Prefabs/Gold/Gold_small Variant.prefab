@@ -101,6 +101,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5924053151137436216}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 596118e62d8dd494fb5713bacd019133,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3318880995443833391}
   m_SourcePrefab: {fileID: 100100000, guid: 596118e62d8dd494fb5713bacd019133, type: 3}
 --- !u!1 &7923946117766452695 stripped
 GameObject:
@@ -121,3 +125,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRotationSpeed: 8
+--- !u!114 &-3318880995443833391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7923946117766452695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be8a2570fe6254488719f74badff850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
