@@ -56,13 +56,15 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha_Clipping: 0.5
+    - _ManualIndex: 0
+    - _ManualOverride: 0
     - _Max_Frames: 6
     - _Outline_Thickness: 0.3
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0.5
     - _Speed: 6.22
-    - _Speed_in_Fps: 10
+    - _Speed_in_Fps: 9
     m_Colors:
     - _Outline_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Width_Height: {r: 3, g: 2, b: 0, a: 0}

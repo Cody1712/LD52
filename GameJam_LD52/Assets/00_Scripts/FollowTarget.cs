@@ -8,7 +8,7 @@ public class FollowTarget : MonoBehaviour
 
     [SerializeField] GameObject target;
     [SerializeField] UpdateMethod updateMethod = UpdateMethod.Update;
-    [SerializeField] bool isLockY;
+    [SerializeField] bool ignoreY;
 
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class FollowTarget : MonoBehaviour
     {
 		if (updateMethod == UpdateMethod.Update)
 		{
-			if (isLockY)
+			if (ignoreY)
 			{
                 this.transform.position = new Vector3(target.transform.position.x, this.transform.position.y, target.transform.position.z);
 			}
@@ -36,7 +36,7 @@ public class FollowTarget : MonoBehaviour
 	{
         if (updateMethod == UpdateMethod.FixedUpdate)
         {
-            if (isLockY)
+            if (ignoreY)
             {
                 this.transform.position = new Vector3(target.transform.position.x, this.transform.position.y, target.transform.position.z);
             }

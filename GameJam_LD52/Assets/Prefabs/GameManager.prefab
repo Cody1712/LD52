@@ -47,8 +47,7 @@ MonoBehaviour:
   waterPlane: {fileID: 0}
   highTideHight: 0.3
   lowTideHight: -2.1
-  newWaterPosition: {x: 0, y: 0, z: 0}
   waterSinkingTime: 0.5
-  waterRisingTime: 0.1
+  waterRisingTime: 0.18
   highTideDuration: 20
-  lowTideDuration: 25
+  lowTideDuration: 15
