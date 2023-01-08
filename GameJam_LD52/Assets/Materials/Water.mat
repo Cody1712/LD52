@@ -93,13 +93,13 @@ Material:
     - _Tiling_Foam: 0.14
     - _Tiling_Highlight_Texture: 0.06
     m_Colors:
-    - _DepthColor: {r: 0.15686272, g: 0.74509805, b: 0.51886547, a: 1}
+    - _DepthColor: {r: 0, g: 0.9890847, b: 1, a: 1}
     - _Edge_Foam_Color: {r: 0.86543256, g: 0.93485224, b: 0.9811321, a: 0}
-    - _Foam_01_Color: {r: 0, g: 1, b: 0.8124628, a: 0}
-    - _Foam_02_Color: {r: 0, g: 0.7203593, b: 1, a: 1}
-    - _Highlight_Color: {r: 0.33745882, g: 0.55143434, b: 0.7921569, a: 1}
+    - _Foam_01_Color: {r: 0.6580189, g: 0.8773585, b: 0.83349055, a: 1}
+    - _Foam_02_Color: {r: 0.25485048, g: 0.6763565, b: 0.7830189, a: 1}
+    - _Highlight_Color: {r: 0.41331434, g: 0.6792453, b: 0.6585234, a: 1}
     - _MainColor: {r: 0.13394447, g: 0.3070667, b: 0.6603774, a: 1}
-    - _Main_Color: {r: 0.25903526, g: 0.42338115, b: 0.7921569, a: 1}
+    - _Main_Color: {r: 0.3921569, g: 0.53333336, b: 0.5176471, a: 1}
     - _Secondary_Color: {r: 0.17942327, g: 0.6037736, b: 0.44151628, a: 0}
     - _Tiling_Highlight_Texture: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
