@@ -180,7 +180,7 @@ public class CharacterController : MonoBehaviour
             if (isPicking)
             {
                 animState = AnimationState.Pick;
-                StartCoroutine(AnimateMaterial(pickMaterial, "_ManualIndex",6,6));
+                StartCoroutine(AnimateMaterial(pickMaterial, "_ManualIndex",4,6));
                 isPicking = false;
 
             }
@@ -227,8 +227,6 @@ public class CharacterController : MonoBehaviour
             mat.SetFloat(indexName, i);
             Debug.Log("Animation Frame "+ i);
         }
-        
-
         isInteracting = false;
     }
 

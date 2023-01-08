@@ -17,9 +17,14 @@ public class GameManager : Manager<GameManager>
     [SerializeField] float lowTideDuration = 20f;
     private bool isHighTide = false;
 
+    [Header("Spawn Behaviour")]
+    public PatrolNet patrolNet;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        patrolNet = this.GetComponent<PatrolNet>();
         StartCoroutine(WaitForNextTide(lowTideDuration));
     }
 
@@ -87,5 +92,6 @@ public class GameManager : Manager<GameManager>
         Gizmos.DrawCube(highTidePosition, gizmoSize);
         Gizmos.DrawCube(lowTidePosition, gizmoSize);
 	}
+
 #endif
 }
