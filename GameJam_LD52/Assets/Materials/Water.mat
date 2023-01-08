@@ -80,7 +80,7 @@ Material:
     - _DepthDistance: 3
     - _DepthPower: 2.1
     - _DepthStrength: 2.56
-    - _Displacement_Strength: 2
+    - _Displacement_Strength: 1.6
     - _Edge_Foam_Intensity: 0.433
     - _Edge_Size: 0.28
     - _Foam_01_Intensity: 0.072
@@ -90,8 +90,8 @@ Material:
     - _QueueOffset: 0
     - _Smoothness: 1
     - _Speed: 0.1
-    - _Tiling_Foam: 28.59
-    - _Tiling_Highlight_Texture: 13.92
+    - _Tiling_Foam: 0.14
+    - _Tiling_Highlight_Texture: 0.06
     m_Colors:
     - _DepthColor: {r: 0.15686272, g: 0.74509805, b: 0.51886547, a: 1}
     - _Edge_Foam_Color: {r: 0.86543256, g: 0.93485224, b: 0.9811321, a: 0}
