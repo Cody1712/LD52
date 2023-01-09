@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 441901159457735487}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   sprintMultiplier: 1.6
-  waterMultiplier: 0.4
+  waterMultiplier: 0.8
   deselerationTime: 9
   characterDirectionFlipSpeed: 8
   playerModel: {fileID: 783796839960723213}

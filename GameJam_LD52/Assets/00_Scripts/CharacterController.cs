@@ -89,11 +89,14 @@ public class CharacterController : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
 		{
-            isInteracting = true;
-            isPicking = true;
+			if (!isInteracting)
+			{
+                isInteracting = true;
+                isPicking = true;
 
-            rb.velocity = new Vector3(0, rb.velocity.y, 0);
-            pickMaterial.SetFloat("_Speed_in_Fps", 0f);
+                rb.velocity = new Vector3(0, rb.velocity.y, 0);
+                pickMaterial.SetFloat("_Speed_in_Fps", 0f);
+            }
         }
     }
 
@@ -180,7 +183,7 @@ public class CharacterController : MonoBehaviour
             if (isPicking)
             {
                 animState = AnimationState.Pick;
-                StartCoroutine(AnimateMaterial(pickMaterial, "_ManualIndex",4,6));
+                StartCoroutine(AnimateMaterial(pickMaterial, "_ManualIndex",5,6));
                 isPicking = false;
 
             }
@@ -228,6 +231,7 @@ public class CharacterController : MonoBehaviour
             Debug.Log("Animation Frame "+ i);
         }
         isInteracting = false;
+        mat.SetFloat(indexName, 6);
     }
 
     IEnumerator WaitForInteraction(float duration)

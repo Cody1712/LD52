@@ -101,9 +101,25 @@ public class Fish_Behaviour : MonoBehaviour
 
 	void DropGold()
 	{
-        Debug.Log("Drop Gold");
-        Vector3 dropPosition = new Vector3(this.transform.position.x, goldDropHight, this.transform.position.z);
-        ObjectPooler.Instance.SpawnFromPool("Gold_medium", dropPosition, null, Quaternion.identity);
+        int randomNumber = Random.Range(1, 3);
+		if (randomNumber == 1)
+		{
+            Debug.Log("Drop Gold");
+            Vector3 dropPosition = new Vector3(this.transform.position.x, goldDropHight, this.transform.position.z);
+            ObjectPooler.Instance.SpawnFromPool("Gold_big", dropPosition, null, Quaternion.identity);
+        }
+        else if (randomNumber == 2)
+		{
+            Debug.Log("Drop Gold");
+            Vector3 dropPosition = new Vector3(this.transform.position.x, goldDropHight, this.transform.position.z);
+            ObjectPooler.Instance.SpawnFromPool("Gold_medium", dropPosition, null, Quaternion.identity);
+        }
+        else if (randomNumber == 3)
+		{
+            Debug.Log("Drop Gold");
+            Vector3 dropPosition = new Vector3(this.transform.position.x, goldDropHight, this.transform.position.z);
+            ObjectPooler.Instance.SpawnFromPool("Gold_small", dropPosition, null, Quaternion.identity);
+        }
     }
 	#endregion
 

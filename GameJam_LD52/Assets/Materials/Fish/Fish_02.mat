@@ -62,11 +62,13 @@ Material:
     - _Displacement_Intensity: 0.272
     - _Emission: 5
     - _Frequency: 1.8
+    - _Highlight_Emission: 2
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0
     - _Speed: 5.5
     - _Strength: 1
     - _T: 0.001
+    - _Texture_Emission: 3
     m_Colors: []
   m_BuildTextureStacks: []
