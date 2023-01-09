@@ -56,12 +56,12 @@ Material:
     m_Ints: []
     m_Floats:
     - _Displacement_Intensity: 0.272
-    - _Emission: 0
+    - _Emission: 1
     - _Frequency: 1.8
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0
-    - _Speed: 5
+    - _Speed: 5.5
     - _Strength: 1
     - _T: 0.001
     m_Colors: []
