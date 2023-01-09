@@ -207,7 +207,22 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    public void StartInteraction(AnimationState newAnimState, float duration)
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.CompareTag("Gold"))
+		{
+            CollectGold(other.gameObject);
+		}
+	}
+
+    void CollectGold(GameObject goldNugget)
+	{
+        GameManager.Instance.GoldValue += 1;
+        goldNugget.transform.position = new Vector3(0,-100,0);
+        goldNugget.SetActive(false);
+    }
+
+	public void StartInteraction(AnimationState newAnimState, float duration)
 	{
         isInteracting = true;
 	}
@@ -225,7 +240,7 @@ public class CharacterController : MonoBehaviour
 
     IEnumerator AnimateMaterial(Material mat, string indexName, float fps, int maxFrames)
 	{
-		for (int i = 0; i< maxFrames; i++)
+		for (int i = 0; i<= maxFrames; i++)
 		{
             yield return new WaitForSeconds(1 / fps);
             mat.SetFloat(indexName, i);
