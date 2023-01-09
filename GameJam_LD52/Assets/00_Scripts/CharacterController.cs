@@ -222,6 +222,7 @@ public class CharacterController : MonoBehaviour
         pickMaterial.SetFloat("_ManualIndex", currentFrame);
     }
 
+
     IEnumerator AnimateMaterial(Material mat, string indexName, float fps, int maxFrames)
 	{
 		for (int i = 0; i< maxFrames; i++)
@@ -231,7 +232,7 @@ public class CharacterController : MonoBehaviour
             Debug.Log("Animation Frame "+ i);
         }
         isInteracting = false;
-        mat.SetFloat(indexName, 6);
+        mat.SetFloat(indexName, 0);
     }
 
     IEnumerator WaitForInteraction(float duration)
