@@ -25,7 +25,8 @@ public class Fish_Behaviour : MonoBehaviour
     private bool canHunt = true;
 
     [Header("Waypoints")]
-    [SerializeField] List<Vector2> wayPoints = new List<Vector2>();
+    [SerializeField] List<Transform> wayTransforms = new List<Transform>();
+    List<Vector2> wayPoints = new List<Vector2>();
     [SerializeField] bool isLoop = false;
     private Vector3 activeWaypoint;
     private int wayPointListLength;
@@ -39,7 +40,13 @@ public class Fish_Behaviour : MonoBehaviour
     [SerializeField] float goldDropHight = -2.1f;
     private float timeSinceLastDrop;
 
-
+	private void Awake()
+	{
+		foreach (Transform t in wayTransforms)
+		{
+            wayPoints.Add(new Vector2(t.transform.position.x, t.transform.position.z));
+        }
+	}
 
 	// Start is called before the first frame update
 	void Start()
@@ -289,19 +296,19 @@ public class Fish_Behaviour : MonoBehaviour
 	private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-		if (wayPoints.Count > 1)
+		if (wayTransforms.Count > 1)
 		{
-            for (int i = 0; i < wayPoints.Count; i++)
+            for (int i = 0; i < wayTransforms.Count; i++)
             {
-                Gizmos.DrawCube(new Vector3(wayPoints[i].x, fishHight, wayPoints[i].y), Vector3.one * 2);
+                Gizmos.DrawCube(new Vector3(wayTransforms[i].transform.position.x, fishHight, wayTransforms[i].transform.position.z), Vector3.one * 2);
                 if (i != 0)
                 {
-                    Gizmos.DrawLine(new Vector3(wayPoints[i - 1].x, fishHight, wayPoints[i - 1].y), new Vector3(wayPoints[i].x, fishHight, wayPoints[i].y));
+                    Gizmos.DrawLine(new Vector3(wayTransforms[i - 1].transform.position.x, fishHight, wayTransforms[i - 1].transform.position.z), new Vector3(wayTransforms[i].transform.position.x, fishHight, wayTransforms[i].transform.position.z));
                 }
             }
             if (isLoop)
             {
-                Gizmos.DrawLine(new Vector3(wayPoints[wayPoints.Count - 1].x, fishHight, wayPoints[wayPoints.Count - 1].y), new Vector3(wayPoints[0].x, fishHight, wayPoints[0].y));
+                Gizmos.DrawLine(new Vector3(wayTransforms[wayTransforms.Count - 1].transform.position.x, fishHight, wayTransforms[wayTransforms.Count - 1].transform.position.z), new Vector3(wayTransforms[0].transform.position.x, fishHight, wayTransforms[0].transform.position.z));
             }
         }
         Gizmos.color = Color.red;

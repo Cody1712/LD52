@@ -204,7 +204,7 @@ public class CharacterController : MonoBehaviour
             {
                 animState = AnimationState.Pick;
                 Pick();
-                StartCoroutine(AnimateMaterial(pickMaterial, "_ManualIndex",5,6));
+                StartCoroutine(AnimateMaterial(pickMaterial, "_ManualIndex",6,6));
                 isPicking = false;
 
             }
