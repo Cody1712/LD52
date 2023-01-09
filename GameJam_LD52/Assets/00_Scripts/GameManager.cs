@@ -24,9 +24,17 @@ public class GameManager : Manager<GameManager>
 
 
     [Header("Gold")]
-    public float GoldValue;
+    public float goldInventory;
+    public float goldStash;
 
-
+    public void Hurt()
+	{
+        goldInventory -= 10f;
+        if(goldInventory < 0)
+		{
+            goldInventory = 0;
+		}
+	}
 
     // Start is called before the first frame update
     void Start()
@@ -76,7 +84,7 @@ public class GameManager : Manager<GameManager>
 
 		if (isHighTide)
 		{
-            StartCoroutine(TriggerTidalChangeEvents(4));
+            StartCoroutine(TriggerTidalChangeEvents(5));
             StartCoroutine(WaitForNextTide(highTideDuration));
         }
 		else

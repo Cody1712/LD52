@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6776550819072887396
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 7
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -20,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Fish_01
-  m_Shader: {fileID: -6465566751694194690, guid: 7157054266f0d8b46893fea2a9cbce57,
+  m_Name: Signal
+  m_Shader: {fileID: -6465566751694194690, guid: 1072f139f468c614e82bba23ea142b0d,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -37,12 +24,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Fish_Emission:
-        m_Texture: {fileID: 2800000, guid: 2bbf6f46ee09de6448e0a55ce5cd7610, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _Main_Texture:
-        m_Texture: {fileID: 2800000, guid: bb79ecb8e5c9b5b4fbce68c952791aca, type: 3}
+        m_Texture: {fileID: 2800000, guid: 46b56902a00c6354e80cdd521ebce1f8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -59,16 +42,21 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Displacement_Intensity: 0.272
-    - _Emission: 5
-    - _Frequency: 1.8
-    - _Highlight_Emission: 2
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0
-    - _Speed: 7
-    - _Strength: 1
-    - _T: 0.001
-    - _Texture_Emission: 3
     m_Colors: []
   m_BuildTextureStacks: []
+--- !u!114 &5487617083187965192
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8580194166005435237
+--- !u!1 &3104998941914310606
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8580194166005435235}
-  - component: {fileID: 8580194166005435236}
+  - component: {fileID: 3104998941914310600}
+  - component: {fileID: 3104998941914310607}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Object Pooler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8580194166005435235
+--- !u!4 &3104998941914310600
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8580194166005435237}
+  m_GameObject: {fileID: 3104998941914310606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8580194166005435236
+--- !u!114 &3104998941914310607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8580194166005435237}
+  m_GameObject: {fileID: 3104998941914310606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8f966a1190ab0e4d84f1dc04fda5add, type: 3}
+  m_Script: {fileID: 11500000, guid: 561f2cd0f90927a48aa0ba304740d316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterPlane: {fileID: 0}
-  highTideHight: 0.3
-  lowTideHight: -2.1
-  waterSinkingTime: 0.5
-  waterRisingTime: 0.2
-  highTideDuration: 30
-  lowTideDuration: 20
-  GoldValue: 0
+  pools:
+  - tag: Gold_big
+    prefab: {fileID: 5873389226799711791, guid: ad52acf725ed8d84ca87b00a5f435acd,
+      type: 3}
+    count: 200
+  - tag: Gold_medium
+    prefab: {fileID: 8216706268549711124, guid: e552362ebfdf4e740b36ad0258544a97,
+      type: 3}
+    count: 200
+  - tag: Gold_small
+    prefab: {fileID: 7923946117766452695, guid: decaca3c2a7430c4db9b8a9f508a18c4,
+      type: 3}
+    count: 200

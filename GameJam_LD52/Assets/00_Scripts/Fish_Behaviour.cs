@@ -15,6 +15,14 @@ public class Fish_Behaviour : MonoBehaviour
     [SerializeField] float speed = 1;
     private Vector3 moveDir;
     private Vector3 hidingSpot;
+    [SerializeField] private float fishHight = - 1;
+
+    [Header("Hunt")]
+    [SerializeField] GameObject player;
+    [SerializeField] float agroRadius = 4f;
+    [SerializeField] GameObject signal;
+    [SerializeField] LayerMask playerLayer;
+    private bool canHunt = true;
 
     [Header("Waypoints")]
     [SerializeField] List<Vector2> wayPoints = new List<Vector2>();
@@ -40,7 +48,8 @@ public class Fish_Behaviour : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         wayPointListLength = wayPoints.Count;
         activeWayPointIndex = 0;
-        activeWaypoint = new Vector3(wayPoints[activeWayPointIndex].x, this.transform.position.y, wayPoints[activeWayPointIndex].y);
+        activeWaypoint = new Vector3(wayPoints[activeWayPointIndex].x, fishHight, wayPoints[activeWayPointIndex].y);
+        this.transform.position = activeWaypoint;
 
         fishState = FishState.Hide;
         hidingSpot = new Vector3(this.transform.position.x, -2.2f, this.transform.position.z);
@@ -61,17 +70,20 @@ public class Fish_Behaviour : MonoBehaviour
         switch (fishState)
         {
             case FishState.Patrol:
+                signal.SetActive(false);
                 MoveToWayPoint();
                 GoldTimer(1);
-                //check for player
+                CheckPlayerDistance();
                 break;
 
             case FishState.Hunt:
-
+                signal.SetActive(true);
+                Hunt();
                 GoldTimer(0.8f);
                 break;
 
             case FishState.Hide:
+                signal.SetActive(false);
                 Hide();
                 break;
         }
@@ -86,6 +98,75 @@ public class Fish_Behaviour : MonoBehaviour
         fishState = FishState.Hide;
         hidingSpot = new Vector3(this.transform.position.x, -2.2f, this.transform.position.z);
     }
+
+    private void Hunt()
+	{
+		if (RaycastCheck() && canHunt)
+		{
+            Debug.Log("Hunting!!!");
+
+            Vector3 newPlayerPosition = new Vector3(player.transform.position.x, fishHight, player.transform.position.z);
+
+            moveDir = newPlayerPosition - this.transform.position;
+
+			if (moveDir.magnitude < 1.5f)
+			{
+                player.GetComponent<CharacterController>().Hurt();
+                GameManager.Instance.Hurt() ;
+                canHunt = false;
+                StartCoroutine(WaitforNextHunt(3));
+			}
+
+            moveDir = moveDir.normalized;
+
+            rb.AddForce(moveDir * speed * Time.deltaTime, ForceMode.VelocityChange);
+
+            Quaternion newRotation = Quaternion.LookRotation(rb.velocity);
+            this.transform.rotation = Quaternion.Slerp(this.transform.rotation, newRotation, 8 * Time.deltaTime);
+        }
+		else
+		{
+            fishState = FishState.Patrol;
+		}
+
+    }
+
+    IEnumerator WaitforNextHunt(float waitTime)
+	{
+        yield return new WaitForSeconds(waitTime);
+        canHunt = true;
+	}
+
+    private void CheckPlayerDistance()
+	{
+        float distance = Vector3.Distance(player.transform.position, this.transform.position);
+
+		if (distance < agroRadius)
+		{
+			if (RaycastCheck())
+			{
+				if (canHunt)
+				{
+                    fishState = FishState.Hunt;
+                }
+			}
+		}
+	}
+
+    private bool RaycastCheck()
+	{
+        Vector3 newPlayerPosition = new Vector3(player.transform.position.x, fishHight, player.transform.position.z);
+        Vector3 rayDir = newPlayerPosition - this.transform.position;
+        RaycastHit hit;
+        if (Physics.Raycast(this.transform.position, rayDir, out hit, agroRadius, playerLayer))
+		{
+			if (hit.collider.CompareTag("Player"))
+			{
+                return true;
+            }
+		}
+        return false;
+	}
 
     #region Gold
     void GoldTimer(float intervalMultiplier)
@@ -104,32 +185,45 @@ public class Fish_Behaviour : MonoBehaviour
         int randomNumber = Random.Range(1, 3);
 		if (randomNumber == 1)
 		{
-            Debug.Log("Drop Gold");
-            Vector3 dropPosition = new Vector3(this.transform.position.x, goldDropHight, this.transform.position.z);
+            float randomOffset = Random.Range(0f,1f);
+
+            Vector3 dropPosition= new Vector3(this.transform.position.x + randomOffset, goldDropHight, this.transform.position.z + randomOffset);
+            
             ObjectPooler.Instance.SpawnFromPool("Gold_big", dropPosition, null, Quaternion.identity);
         }
         else if (randomNumber == 2)
 		{
-            Debug.Log("Drop Gold");
-            Vector3 dropPosition = new Vector3(this.transform.position.x, goldDropHight, this.transform.position.z);
+            float randomOffset = Random.Range(0f, 1f);
+            Vector3 dropPosition = new Vector3(this.transform.position.x + randomOffset, goldDropHight, this.transform.position.z + randomOffset);
             ObjectPooler.Instance.SpawnFromPool("Gold_medium", dropPosition, null, Quaternion.identity);
         }
         else if (randomNumber == 3)
 		{
-            Debug.Log("Drop Gold");
-            Vector3 dropPosition = new Vector3(this.transform.position.x, goldDropHight, this.transform.position.z);
+            float randomOffset = Random.Range(0f, 1f);
+            Vector3 dropPosition = new Vector3(this.transform.position.x + randomOffset, goldDropHight, this.transform.position.z + randomOffset);
             ObjectPooler.Instance.SpawnFromPool("Gold_small", dropPosition, null, Quaternion.identity);
         }
     }
-	#endregion
+
+    void SpawnGold(Vector3 pos)
+    {
+        float randomOffset = Random.Range(0f, 0.5f);
+
+        Vector3 dropPosition = new Vector3(pos.x + randomOffset, goldDropHight, pos.z + randomOffset);
+
+        ObjectPooler.Instance.SpawnFromPool("Gold_big", dropPosition, null, Quaternion.identity);
+    }
+    #endregion
 
     public void GettingPicked()
 	{
         if(fishState == FishState.Hide)
 		{
-            DropGold();
-        }
-    }
+            Vector3 spawnPos = this.transform.position - player.transform.position;
+            spawnPos = spawnPos.normalized;
+            SpawnGold(this.transform.position + (spawnPos * 2f));
+		}
+	}
 
     void Hide()
 	{
@@ -144,13 +238,14 @@ public class Fish_Behaviour : MonoBehaviour
     {
         moveDir = activeWaypoint - this.transform.position;
         distance = moveDir.magnitude;
+        moveDir = moveDir.normalized;
 
 
         if (distance > 1)
         {
             //this.transform.position = Vector3.Slerp(this.transform.position, activeWaypoint, Time.deltaTime);
             //rb.velocity = moveDir.normalized * speed * 100 * Time.deltaTime;
-            rb.AddForce(moveDir.normalized * speed, ForceMode.Force);
+            rb.AddForce(moveDir * speed * Time.deltaTime, ForceMode.VelocityChange);
 
             Quaternion newRotation = Quaternion.LookRotation(rb.velocity);
             this.transform.rotation = Quaternion.Slerp(this.transform.rotation, newRotation, 8 * Time.deltaTime);
@@ -178,7 +273,7 @@ public class Fish_Behaviour : MonoBehaviour
 			}
 
             activeWayPointIndex += wayPointDirection;
-            activeWaypoint = new Vector3(wayPoints[activeWayPointIndex].x, this.transform.position.y, wayPoints[activeWayPointIndex].y);
+            activeWaypoint = new Vector3(wayPoints[activeWayPointIndex].x, fishHight, wayPoints[activeWayPointIndex].y);
         }
     }
 
@@ -198,17 +293,19 @@ public class Fish_Behaviour : MonoBehaviour
 		{
             for (int i = 0; i < wayPoints.Count; i++)
             {
-                Gizmos.DrawCube(new Vector3(wayPoints[i].x, 0, wayPoints[i].y), Vector3.one * 2);
+                Gizmos.DrawCube(new Vector3(wayPoints[i].x, fishHight, wayPoints[i].y), Vector3.one * 2);
                 if (i != 0)
                 {
-                    Gizmos.DrawLine(new Vector3(wayPoints[i - 1].x, 0, wayPoints[i - 1].y), new Vector3(wayPoints[i].x, 0, wayPoints[i].y));
+                    Gizmos.DrawLine(new Vector3(wayPoints[i - 1].x, fishHight, wayPoints[i - 1].y), new Vector3(wayPoints[i].x, fishHight, wayPoints[i].y));
                 }
             }
             if (isLoop)
             {
-                Gizmos.DrawLine(new Vector3(wayPoints[wayPoints.Count - 1].x, 0, wayPoints[wayPoints.Count - 1].y), new Vector3(wayPoints[0].x, 0, wayPoints[0].y));
+                Gizmos.DrawLine(new Vector3(wayPoints[wayPoints.Count - 1].x, fishHight, wayPoints[wayPoints.Count - 1].y), new Vector3(wayPoints[0].x, fishHight, wayPoints[0].y));
             }
         }
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(this.transform.position, agroRadius);
     }
 
 #endif

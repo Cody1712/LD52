@@ -76,5 +76,39 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f14fceac1e8fe2459a41551acf6e046,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4992080257468978505}
   m_SourcePrefab: {fileID: 100100000, guid: 6f14fceac1e8fe2459a41551acf6e046, type: 3}
+--- !u!1 &1970419618836481573 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f14fceac1e8fe2459a41551acf6e046,
+    type: 3}
+  m_PrefabInstance: {fileID: 1700460591303932788}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-4992080257468978505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970419618836481573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e24bcae4942261944933e336f2af54e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  fishHight: -1
+  player: {fileID: 0}
+  agroRadius: 4
+  signal: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  wayPoints: []
+  isLoop: 0
+  goldDropInterval: 1.2
+  goldDropHight: -1.9
