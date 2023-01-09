@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24bcae4942261944933e336f2af54e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 16
+  speed: 17
   fishHight: -0.6
   player: {fileID: 0}
   agroRadius: 12
@@ -152,14 +152,16 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  wayPoints:
-  - {x: -17.1, y: 0}
-  - {x: -13.47, y: 8.44}
-  - {x: 2.74, y: 3.55}
-  - {x: 2.95, y: -9.62}
-  - {x: -8.97, y: -9.62}
+  wayTransforms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   isLoop: 1
-  goldDropInterval: 1.2
+  goldDropInterval: 2.2
   goldDropHight: -1.9
 --- !u!135 &7792099803669013967
 SphereCollider:

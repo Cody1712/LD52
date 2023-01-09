@@ -84,7 +84,7 @@ public class GameManager : Manager<GameManager>
 
 		if (isHighTide)
 		{
-            StartCoroutine(TriggerTidalChangeEvents(5));
+            StartCoroutine(TriggerTidalChangeEvents(6));
             StartCoroutine(WaitForNextTide(highTideDuration));
         }
 		else
