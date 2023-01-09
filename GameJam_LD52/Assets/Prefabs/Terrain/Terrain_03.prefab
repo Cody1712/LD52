@@ -71,7 +71,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 418f73de3e5783342a3f131c8788dad3,
         type: 3}
       propertyPath: m_Name
-      value: Terrain_03 Variant
+      value: Terrain_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 418f73de3e5783342a3f131c8788dad3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

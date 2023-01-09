@@ -31,11 +31,9 @@ public class CharacterController : MonoBehaviour
 
     private bool isPicking = false;
 
-
-
     [Header("Water Interaction")]
     [SerializeField] WaterDetector waterDetector;
-    //TODO get slower in high water
+
 
 
 
@@ -100,8 +98,9 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-	#region Movement
-	private Vector3 GetMovementInputDirection()
+
+    #region Movement
+    private Vector3 GetMovementInputDirection()
     {
         return new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
     }
@@ -165,6 +164,27 @@ public class CharacterController : MonoBehaviour
 
     #region Animation
 
+    public void Hurt()
+    {
+        isInteracting = true;
+        rb.velocity = new Vector3(0, rb.velocity.y, 0);
+
+        animState = AnimationState.Hurt;
+        StartCoroutine(AnimateMaterial(hurtMaterial, "_ManualIndex", 5, 3));
+    }
+
+    void Pick()
+    {
+        RaycastHit[] hits = Physics.SphereCastAll(this.transform.position, 2f, transform.forward);
+        foreach (RaycastHit hit in hits)
+        {
+            if (hit.collider.CompareTag("Fish"))
+            {
+                hit.collider.GetComponent<Fish_Behaviour>().GettingPicked();
+            }
+        }
+    }
+
     private void HandleAnimation()
     {
 		if (movementInputDirection == Vector3.zero && !isInteracting)
@@ -183,6 +203,7 @@ public class CharacterController : MonoBehaviour
             if (isPicking)
             {
                 animState = AnimationState.Pick;
+                Pick();
                 StartCoroutine(AnimateMaterial(pickMaterial, "_ManualIndex",5,6));
                 isPicking = false;
 
@@ -206,22 +227,7 @@ public class CharacterController : MonoBehaviour
                 break;
         }
     }
-
-	private void OnTriggerEnter(Collider other)
-	{
-		if (other.CompareTag("Gold"))
-		{
-            CollectGold(other.gameObject);
-		}
-	}
-
-    void CollectGold(GameObject goldNugget)
-	{
-        GameManager.Instance.GoldValue += 1;
-        goldNugget.transform.position = new Vector3(0,-100,0);
-        goldNugget.SetActive(false);
-    }
-
+	#region unused
 	public void StartInteraction(AnimationState newAnimState, float duration)
 	{
         isInteracting = true;
@@ -236,15 +242,16 @@ public class CharacterController : MonoBehaviour
 
         pickMaterial.SetFloat("_ManualIndex", currentFrame);
     }
+	#endregion
 
 
-    IEnumerator AnimateMaterial(Material mat, string indexName, float fps, int maxFrames)
+
+	IEnumerator AnimateMaterial(Material mat, string indexName, float fps, int maxFrames)
 	{
 		for (int i = 0; i<= maxFrames; i++)
 		{
             yield return new WaitForSeconds(1 / fps);
             mat.SetFloat(indexName, i);
-            Debug.Log("Animation Frame "+ i);
         }
         isInteracting = false;
         mat.SetFloat(indexName, 0);
@@ -257,6 +264,5 @@ public class CharacterController : MonoBehaviour
     }
 
     #endregion
-
 
 }
