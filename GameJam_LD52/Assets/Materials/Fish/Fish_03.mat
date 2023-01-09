@@ -37,6 +37,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Fish_Emission:
+        m_Texture: {fileID: 2800000, guid: 0ad5be00d7f75e14da3a305423d07053, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Main_Texture:
         m_Texture: {fileID: 2800000, guid: 62ea87978497b8846b7e34ea2635d163, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -56,7 +60,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Displacement_Intensity: 0.272
-    - _Emission: 1
+    - _Emission: 5
     - _Frequency: 1.8
     - _QueueControl: 0
     - _QueueOffset: 0

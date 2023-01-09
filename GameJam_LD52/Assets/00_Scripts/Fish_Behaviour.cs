@@ -8,9 +8,13 @@ public class Fish_Behaviour : MonoBehaviour
     private enum FishState { Patrol, Hunt, Hide };
     private FishState fishState = FishState.Patrol;
 
+    private Rigidbody rb;
+    private Renderer renderer;
+
     [Header("Movement")]
     [SerializeField] float speed = 1;
     private Vector3 moveDir;
+    private Vector3 hidingSpot;
 
     [Header("Waypoints")]
     [SerializeField] List<Vector2> wayPoints = new List<Vector2>();
@@ -21,21 +25,28 @@ public class Fish_Behaviour : MonoBehaviour
     private int wayPointDirection = 1;
     private float distance;
 
-    private Rigidbody rb;
 
 	[Header("Gold")]
     [SerializeField][Tooltip("In Seconds")] float goldDropInterval = 1f;
+    [SerializeField] float goldDropHight = -2.1f;
     private float timeSinceLastDrop;
 
 
 
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
+        renderer = this.GetComponent<Renderer>();
         rb = this.GetComponent<Rigidbody>();
         wayPointListLength = wayPoints.Count;
         activeWayPointIndex = 0;
         activeWaypoint = new Vector3(wayPoints[activeWayPointIndex].x, this.transform.position.y, wayPoints[activeWayPointIndex].y);
+
+        fishState = FishState.Hide;
+        hidingSpot = new Vector3(this.transform.position.x, -2.2f, this.transform.position.z);
+
+        GameManager.Instance.onHighTide += OnHighTide;
+        GameManager.Instance.onLowTide += OnLowTide;
     }
 
     // Update is called once per frame
@@ -52,6 +63,7 @@ public class Fish_Behaviour : MonoBehaviour
             case FishState.Patrol:
                 MoveToWayPoint();
                 GoldTimer(1);
+                //check for player
                 break;
 
             case FishState.Hunt:
@@ -60,13 +72,23 @@ public class Fish_Behaviour : MonoBehaviour
                 break;
 
             case FishState.Hide:
-
+                Hide();
                 break;
         }
     }
 
-	#region Gold
-	void GoldTimer(float intervalMultiplier)
+    private void OnHighTide()
+	{
+        fishState = FishState.Patrol;
+	}
+    private void OnLowTide()
+	{
+        fishState = FishState.Hide;
+        hidingSpot = new Vector3(this.transform.position.x, -2.2f, this.transform.position.z);
+    }
+
+    #region Gold
+    void GoldTimer(float intervalMultiplier)
 	{
         timeSinceLastDrop += Time.deltaTime;
 
@@ -80,8 +102,8 @@ public class Fish_Behaviour : MonoBehaviour
 	void DropGold()
 	{
         Debug.Log("Drop Gold");
-
-        ObjectPooler.Instance.SpawnFromPool("Gold_medium",this.transform.position,null, Quaternion.identity);
+        Vector3 dropPosition = new Vector3(this.transform.position.x, goldDropHight, this.transform.position.z);
+        ObjectPooler.Instance.SpawnFromPool("Gold_medium", dropPosition, null, Quaternion.identity);
     }
 	#endregion
 
@@ -91,6 +113,15 @@ public class Fish_Behaviour : MonoBehaviour
 		{
             DropGold();
         }
+    }
+
+    void Hide()
+	{
+        this.transform.position = Vector3.Lerp(this.transform.position, hidingSpot, 2 * Time.deltaTime);
+
+        Vector3 lookVector = new Vector3(hidingSpot.x, -20, hidingSpot.z);
+        Quaternion newRotation = Quaternion.LookRotation(lookVector);
+        this.transform.rotation = Quaternion.Slerp(this.transform.rotation, newRotation, 8 * Time.deltaTime);
     }
 
 	void MoveToWayPoint()
@@ -136,8 +167,15 @@ public class Fish_Behaviour : MonoBehaviour
     }
 
 
+	private void OnDisable()
+	{
+        GameManager.Instance.onHighTide -= OnHighTide;
+        GameManager.Instance.onLowTide -= OnLowTide;
+    }
+
+
 #if UNITY_EDITOR
-    private void OnDrawGizmosSelected()
+	private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
 		if (wayPoints.Count > 1)

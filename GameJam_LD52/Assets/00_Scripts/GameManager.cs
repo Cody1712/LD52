@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GameManager : Manager<GameManager>
 {
@@ -16,6 +17,10 @@ public class GameManager : Manager<GameManager>
     [SerializeField] float highTideDuration = 10f;
     [SerializeField] float lowTideDuration = 20f;
     private bool isHighTide = false;
+
+    //[Header("Fish Control")]
+    public event Action onHighTide;
+    public event Action onLowTide;
 
 
 
@@ -67,14 +72,31 @@ public class GameManager : Manager<GameManager>
 
 		if (isHighTide)
 		{
+            StartCoroutine(TriggerTidalChangeEvents(3));
             StartCoroutine(WaitForNextTide(highTideDuration));
         }
 		else
 		{
+            StartCoroutine(TriggerTidalChangeEvents(0));
             StartCoroutine(WaitForNextTide(lowTideDuration));
         }
-
     }
+
+    IEnumerator TriggerTidalChangeEvents(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+
+        if (isHighTide)
+        {
+            onHighTide.Invoke();
+        }
+        else
+        {
+            onLowTide.Invoke();
+        }
+    }
+
+
 
 #if UNITY_EDITOR
 
