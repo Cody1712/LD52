@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 441901159457735486}
   - component: {fileID: 441901159457735484}
   - component: {fileID: 441901159457735487}
+  - component: {fileID: 81901820}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -114,7 +115,7 @@ Transform:
   - {fileID: 6702734634278632510}
   - {fileID: 4771829742532792474}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &441901159457735486
 MonoBehaviour:
@@ -137,7 +138,7 @@ MonoBehaviour:
   idleMaterial: {fileID: 2100000, guid: 23f23e58791572f48828249a03016f21, type: 2}
   walkMaterial: {fileID: 2100000, guid: 3498e698e46599b4aad44bad7dcc6614, type: 2}
   pickMaterial: {fileID: 2100000, guid: 9864f667888bf8d439bd3c78c4fba02d, type: 2}
-  hurtMaterial: {fileID: 0}
+  hurtMaterial: {fileID: 2100000, guid: 8de0c9475052a044891325b0a16be8a2, type: 2}
   waterDetector: {fileID: 973310464950474304}
 --- !u!136 &441901159457735484
 CapsuleCollider:
@@ -189,6 +190,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &81901820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441901159457735480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773c2b2eef213074cbd77cf4a822b7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSound: {fileID: 0}
 --- !u!1 &506206383511097348
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +215,7 @@ GameObject:
   - component: {fileID: 6653230793896899651}
   m_Layer: 7
   m_Name: FishCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -240,7 +254,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.3
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 2, z: 0}
@@ -270,7 +284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111790473280928781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -296,7 +310,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.6
+  m_Radius: 1.9
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3608022335642868946
 MonoBehaviour:

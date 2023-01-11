@@ -26,6 +26,10 @@ public class GoldCollector : MonoBehaviour
     void CollectGold(GameObject goldNugget)
     {
         GameManager.Instance.goldInventory += 1;
+
+        //Play collect Sound
+        ObjectPooler.Instance.SpawnFromPool("Gold_Collect_Sound", Vector3.zero,null,Quaternion.identity);
+
         goldNugget.transform.position = new Vector3(0, -100, 0);
         goldNugget.SetActive(false);
     }

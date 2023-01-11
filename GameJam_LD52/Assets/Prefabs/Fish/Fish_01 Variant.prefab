@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24bcae4942261944933e336f2af54e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 17
+  speed: 18
   fishHight: -0.6
   player: {fileID: 0}
   agroRadius: 12
@@ -162,7 +162,7 @@ MonoBehaviour:
   - {fileID: 0}
   isLoop: 1
   goldDropInterval: 2.2
-  goldDropHight: -1.9
+  goldDropHight: -1.7
 --- !u!135 &7792099803669013967
 SphereCollider:
   m_ObjectHideFlags: 0

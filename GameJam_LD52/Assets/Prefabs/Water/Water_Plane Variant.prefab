@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &289035803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 289035804}
+  - component: {fileID: 289035805}
+  m_Layer: 4
+  m_Name: WaterCollider
+  m_TagString: Water
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &289035804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289035803}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3823303669146846230}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &289035805
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289035803}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 0.25316235, z: 0.5}
+  m_Center: {x: 0, y: -0.12658118, z: 0}
 --- !u!1001 &3640495177017437609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21,7 +74,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 72c7368534f01a749b140039d4205c00,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.10179209
+      value: 0.3410914
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 72c7368534f01a749b140039d4205c00,
         type: 3}
@@ -120,7 +173,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d1ef7701f9e98724e946cc411ef4a4ef,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d1ef7701f9e98724e946cc411ef4a4ef,
         type: 3}
@@ -145,7 +198,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d1ef7701f9e98724e946cc411ef4a4ef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d1ef7701f9e98724e946cc411ef4a4ef,
         type: 3}
@@ -190,7 +243,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d1ef7701f9e98724e946cc411ef4a4ef,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d1ef7701f9e98724e946cc411ef4a4ef,
         type: 3}
@@ -214,6 +267,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3823303669317159490}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d1ef7701f9e98724e946cc411ef4a4ef,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 289035804}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d1ef7701f9e98724e946cc411ef4a4ef,
         type: 3}
