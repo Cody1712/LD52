@@ -93,7 +93,7 @@ Material:
     - _Tiling_Foam: 0.14
     - _Tiling_Highlight_Texture: 0.06
     m_Colors:
-    - _DepthColor: {r: 0, g: 0.9890847, b: 1, a: 1}
+    - _DepthColor: {r: 0, g: 1, b: 0.91298866, a: 1}
     - _Edge_Foam_Color: {r: 0.86543256, g: 0.93485224, b: 0.9811321, a: 0}
     - _Foam_01_Color: {r: 0.6580189, g: 0.8773585, b: 0.83349055, a: 1}
     - _Foam_02_Color: {r: 0.25485048, g: 0.6763565, b: 0.7830189, a: 1}

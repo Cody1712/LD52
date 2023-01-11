@@ -147,7 +147,7 @@ MonoBehaviour:
   speed: 18
   fishHight: -0.6
   player: {fileID: 0}
-  agroRadius: 12
+  agroRadius: 7
   signal: {fileID: 8170759974852326764}
   playerLayer:
     serializedVersion: 2
