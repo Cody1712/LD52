@@ -69,6 +69,6 @@ Material:
     - _Speed: 10
     - _Strength: 1
     - _T: 0.001
-    - _Texture_Emission: 0
+    - _Texture_Emission: 4
     m_Colors: []
   m_BuildTextureStacks: []
