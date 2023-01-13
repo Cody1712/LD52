@@ -59,14 +59,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Displacement_Intensity: 0.272
+    - _Displacement_Intensity: 0.13
     - _Emission: 5
-    - _Frequency: 1.8
+    - _Frequency: 4
     - _Highlight_Emission: 2
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0
-    - _Speed: 7
+    - _Speed: 8
     - _Strength: 1
     - _T: 0.001
     - _Texture_Emission: 3

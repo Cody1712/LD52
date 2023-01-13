@@ -13,12 +13,17 @@ public class Fish_Behaviour : MonoBehaviour
 
     [Header("Movement")]
     [SerializeField] float speed = 1;
+    [SerializeField] float acceleration = 1;
     private Vector3 moveDir;
     private Vector3 hidingSpot;
     [SerializeField] private float fishHight = - 1;
 
+    private float newSpeed = 1f;
+    private float currentSpeed = 1f;
+
     [Header("Hunt")]
     [SerializeField] GameObject player;
+    [SerializeField] float huntSpeed = 4f;
     [SerializeField] float agroRadius = 4f;
     [SerializeField] GameObject signal;
     [SerializeField] LayerMask playerLayer;
@@ -63,12 +68,16 @@ public class Fish_Behaviour : MonoBehaviour
 
         GameManager.Instance.onHighTide += OnHighTide;
         GameManager.Instance.onLowTide += OnLowTide;
+
+        newSpeed = speed;
     }
 
     // Update is called once per frame
     void Update()
     {
         UpdateBehaviour();
+
+        currentSpeed = Mathf.Lerp(currentSpeed, newSpeed, acceleration * Time.deltaTime);
     }
 
 
@@ -77,6 +86,7 @@ public class Fish_Behaviour : MonoBehaviour
         switch (fishState)
         {
             case FishState.Patrol:
+                newSpeed = speed;
                 signal.SetActive(false);
                 MoveToWayPoint();
                 GoldTimer(1);
@@ -84,12 +94,14 @@ public class Fish_Behaviour : MonoBehaviour
                 break;
 
             case FishState.Hunt:
+                newSpeed = huntSpeed;
                 signal.SetActive(true);
                 Hunt();
                 GoldTimer(0.8f);
                 break;
 
             case FishState.Hide:
+                newSpeed = speed;
                 signal.SetActive(false);
                 Hide();
                 break;
@@ -126,7 +138,7 @@ public class Fish_Behaviour : MonoBehaviour
 
             moveDir = moveDir.normalized;
 
-            rb.AddForce(moveDir * speed * Time.deltaTime, ForceMode.VelocityChange);
+            rb.AddForce(moveDir * currentSpeed * Time.deltaTime, ForceMode.VelocityChange);
 
             Quaternion newRotation = Quaternion.LookRotation(rb.velocity);
             this.transform.rotation = Quaternion.Slerp(this.transform.rotation, newRotation, 8 * Time.deltaTime);
@@ -252,7 +264,7 @@ public class Fish_Behaviour : MonoBehaviour
         {
             //this.transform.position = Vector3.Slerp(this.transform.position, activeWaypoint, Time.deltaTime);
             //rb.velocity = moveDir.normalized * speed * 100 * Time.deltaTime;
-            rb.AddForce(moveDir * speed * Time.deltaTime, ForceMode.VelocityChange);
+            rb.AddForce(moveDir * currentSpeed * Time.deltaTime, ForceMode.VelocityChange);
 
             Quaternion newRotation = Quaternion.LookRotation(rb.velocity);
             this.transform.rotation = Quaternion.Slerp(this.transform.rotation, newRotation, 8 * Time.deltaTime);

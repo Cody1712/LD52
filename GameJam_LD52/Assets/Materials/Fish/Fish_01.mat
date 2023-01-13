@@ -23,11 +23,11 @@ Material:
   m_Name: Fish_01
   m_Shader: {fileID: -6465566751694194690, guid: 7157054266f0d8b46893fea2a9cbce57,
     type: 3}
-  m_Parent: {fileID: 0}
+  m_Parent: {fileID: 2100000, guid: 0e592de7fd7c811489bc6b85756451ad, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -45,30 +45,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: bb79ecb8e5c9b5b4fbce68c952791aca, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Displacement_Intensity: 0.272
-    - _Emission: 5
+    - _Displacement_Intensity: 0.22
     - _Frequency: 1.8
-    - _Highlight_Emission: 2
-    - _QueueControl: 0
-    - _QueueOffset: 0
-    - _Smoothness: 0
-    - _Speed: 7
-    - _Strength: 1
-    - _T: 0.001
-    - _Texture_Emission: 3
+    - _Speed: 8
     m_Colors: []
   m_BuildTextureStacks: []

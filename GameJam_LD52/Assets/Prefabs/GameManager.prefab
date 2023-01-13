@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8580194166005435236
 MonoBehaviour:
@@ -45,10 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterPlane: {fileID: 0}
-  highTideHight: 0.3
-  lowTideHight: -2.1
+  highTideHight: 0
+  lowTideHight: -1.8
   waterSinkingTime: 0.5
-  waterRisingTime: 0.2
-  highTideDuration: 30
-  lowTideDuration: 20
-  GoldValue: 0
+  waterRisingTime: 0.13
+  highTideDuration: 50
+  lowTideDuration: 30
+  goldInventory: 0
+  goldStash: 0

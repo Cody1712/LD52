@@ -80,26 +80,26 @@ Material:
     - _DepthDistance: 3
     - _DepthPower: 2.1
     - _DepthStrength: 2.56
-    - _Displacement_Strength: 1.6
-    - _Edge_Foam_Intensity: 0.433
+    - _Displacement_Strength: 2
+    - _Edge_Foam_Intensity: 0.4
     - _Edge_Size: 0.28
-    - _Foam_01_Intensity: 0.072
-    - _Foam_02_Intensity: 0.04
+    - _Foam_01_Intensity: 0.075
+    - _Foam_02_Intensity: 0.055
     - _Highlight_Intensity: 0.58
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 1
     - _Speed: 0.1
     - _Tiling_Foam: 0.14
-    - _Tiling_Highlight_Texture: 0.06
+    - _Tiling_Highlight_Texture: 0.05
     m_Colors:
-    - _DepthColor: {r: 0, g: 1, b: 0.91298866, a: 1}
-    - _Edge_Foam_Color: {r: 0.86543256, g: 0.93485224, b: 0.9811321, a: 0}
-    - _Foam_01_Color: {r: 0.6580189, g: 0.8773585, b: 0.83349055, a: 1}
+    - _DepthColor: {r: 0, g: 1, b: 0.9137254, a: 1}
+    - _Edge_Foam_Color: {r: 0.884, g: 0.952, b: 1, a: 0}
+    - _Foam_01_Color: {r: 0.69, g: 0.92, b: 0.8748215, a: 1}
     - _Foam_02_Color: {r: 0.25485048, g: 0.6763565, b: 0.7830189, a: 1}
-    - _Highlight_Color: {r: 0.41331434, g: 0.6792453, b: 0.6585234, a: 1}
+    - _Highlight_Color: {r: 0.40407845, g: 0.72156864, b: 0.6954736, a: 1}
     - _MainColor: {r: 0.13394447, g: 0.3070667, b: 0.6603774, a: 1}
-    - _Main_Color: {r: 0.3921569, g: 0.53333336, b: 0.5176471, a: 1}
+    - _Main_Color: {r: 0.40988237, g: 0.6117647, b: 0.60978794, a: 1}
     - _Secondary_Color: {r: 0.17942327, g: 0.6037736, b: 0.44151628, a: 0}
     - _Tiling_Highlight_Texture: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

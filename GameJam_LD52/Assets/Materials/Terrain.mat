@@ -74,8 +74,8 @@ Material:
     - _Second_Texture_Tiling: 0.5
     - _Smoothness: 0
     m_Colors:
-    - _Color_01: {r: 0.7735849, g: 0.57135427, b: 0.3466536, a: 0}
-    - _Color_02: {r: 0.8396226, g: 0.6524625, b: 0.43961373, a: 1}
+    - _Color_01: {r: 0.8301887, g: 0.61948, b: 0.37985048, a: 1}
+    - _Color_02: {r: 0.922, g: 0.72068995, b: 0.4992489, a: 1}
     - _Secondary_Texture_Color_01: {r: 0.7169812, g: 0.60398304, b: 0.47686014, a: 0}
     - _Secondary_Texture_Color_02: {r: 0.77254903, g: 0.5162439, b: 0.34509805, a: 0}
     - _Tiling: {r: 0.4, g: 0.4, b: 0, a: 0}
