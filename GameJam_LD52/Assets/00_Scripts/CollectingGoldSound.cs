@@ -5,12 +5,18 @@ using UnityEngine;
 public class CollectingGoldSound : MonoBehaviour, IPooledObject
 {
     [SerializeField] private AudioSource audioSource;
-    
+    [SerializeField] bool pitchVariation;
 
-    public void OnObjectSpawn()
+    [SerializeField][Range(0,2)] float basePitch = 1;
+
+
+	public void OnObjectSpawn()
 	{
-        float randomPitch = Random.Range(0.8f,1.25f);
-        audioSource.pitch = randomPitch;
+		if (pitchVariation)
+		{
+            float randomPitch = Random.Range(-0.2f, 0.25f);
+            audioSource.pitch = basePitch + randomPitch;
+        }
         audioSource.Play();
     }
 }

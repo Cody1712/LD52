@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2369453195332169293}
   - component: {fileID: 148581316970100652}
   m_Layer: 0
-  m_Name: Gold_Collectable_Sound
+  m_Name: Alert_Sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2369453195332169293
 MonoBehaviour:
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 148581316970100652}
-  pitchVariation: 1
+  pitchVariation: 0
   basePitch: 1
 --- !u!82 &148581316970100652
 AudioSource:
@@ -58,9 +58,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b2e43fe8d9b140042a36fe13ff0e3ff2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 605152f3538d9804a9b2f57bd2e554df, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0

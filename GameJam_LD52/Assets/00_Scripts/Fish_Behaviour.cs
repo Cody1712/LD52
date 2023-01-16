@@ -167,6 +167,7 @@ public class Fish_Behaviour : MonoBehaviour
 				if (canHunt)
 				{
                     fishState = FishState.Hunt;
+                    ObjectPooler.Instance.SpawnFromPool("Alert_Sound", Vector3.zero, null, Quaternion.identity);
                 }
 			}
 		}
