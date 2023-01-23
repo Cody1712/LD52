@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3104998941914310607
 MonoBehaviour:
@@ -57,3 +57,11 @@ MonoBehaviour:
     prefab: {fileID: 7923946117766452695, guid: decaca3c2a7430c4db9b8a9f508a18c4,
       type: 3}
     count: 200
+  - tag: Gold_Collect_Sound
+    prefab: {fileID: 4131619072360584516, guid: adf29c2de65955c44bead00adce716c0,
+      type: 3}
+    count: 40
+  - tag: Alert_Sound
+    prefab: {fileID: 4131619072360584516, guid: 75b3dc8c401202945bc8a601fa0e24ba,
+      type: 3}
+    count: 40

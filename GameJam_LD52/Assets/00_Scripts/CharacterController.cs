@@ -34,6 +34,14 @@ public class CharacterController : MonoBehaviour
     [Header("Water Interaction")]
     [SerializeField] WaterDetector waterDetector;
 
+	[Header("Footstep Audio")]
+	[SerializeField] private AudioClip waterFootSteps;
+	[SerializeField] private AudioClip SandFootSteps;
+    [SerializeField] private LayerMask footSoundLayers;
+    private AudioSource walkAudioPlayer;
+    private bool isOnSand;
+
+
 
 
 
@@ -41,12 +49,10 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
         cam = Camera.main.gameObject;
         rb = this.GetComponent<Rigidbody>();
 
+        walkAudioPlayer = this.GetComponent<AudioSource>();
         renderer = playerModel.GetComponent<Renderer>();
         animState = AnimationState.Idle;
 
@@ -56,7 +62,15 @@ public class CharacterController : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
-        HandleInput();
+		if (GameManager.Instance.gameState == GameManager.GameState.RUNNING)
+		{
+            HandleInput();
+        }
+		else
+		{
+            movementInputDirection = Vector3.zero;
+        }
+
         CheckRotation();
 
         HandleAnimation();
@@ -77,7 +91,7 @@ public class CharacterController : MonoBehaviour
 		if (Input.GetKey(KeyCode.LeftShift))
 		{
             currentSprintMultiplier = sprintMultiplier;
-            walkMaterial.SetFloat("_Speed_in_Fps", 14f);
+            walkMaterial.SetFloat("_Speed_in_Fps", 11f);
         }
 		else
 		{
@@ -215,14 +229,21 @@ public class CharacterController : MonoBehaviour
         {
             case AnimationState.Idle:
                 renderer.sharedMaterial = idleMaterial;
+                walkAudioPlayer.enabled = false;
                 break;
             case AnimationState.Walk:
                 renderer.sharedMaterial = walkMaterial;
+                //Check for what terrain is below character
+                walkAudioPlayer.enabled = true;
+                FloorCheck();
+                SwitchAudio();
                 break;
             case AnimationState.Pick:
+                walkAudioPlayer.enabled = false;
                 renderer.sharedMaterial = pickMaterial;
                 break;
             case AnimationState.Hurt:
+                walkAudioPlayer.enabled = false;
                 renderer.sharedMaterial = hurtMaterial;
                 break;
         }
@@ -243,6 +264,46 @@ public class CharacterController : MonoBehaviour
         pickMaterial.SetFloat("_ManualIndex", currentFrame);
     }
 	#endregion
+
+    void SwitchAudio()
+	{
+		if (isOnSand)
+		{
+			if (walkAudioPlayer.clip != SandFootSteps)
+			{
+                walkAudioPlayer.clip = SandFootSteps;
+                walkAudioPlayer.Play();
+            }
+        }
+		else if(walkAudioPlayer.clip != waterFootSteps)
+		{
+            walkAudioPlayer.clip = waterFootSteps;
+            walkAudioPlayer.Play();
+        }
+	}
+
+    void FloorCheck()
+	{
+        RaycastHit hit;
+
+        if (Physics.Raycast(this.transform.position + (Vector3.up * 3f), Vector3.down, out hit, 3.2f, footSoundLayers))
+		{
+            Debug.Log(hit.collider.gameObject);
+            if (hit.collider.CompareTag("Terrain")) 
+            {
+                Debug.Log("HitTerrain");
+                isOnSand = true;
+            }
+			else if(hit.collider.CompareTag("Water"))
+			{
+                isOnSand = false;
+            }
+		}
+		else
+		{
+            Debug.Log("Nothing Detected");
+        }
+	}
 
 
 
@@ -265,4 +326,11 @@ public class CharacterController : MonoBehaviour
 
     #endregion
 
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+	{
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(this.transform.position + (Vector3.up * 3f), this.transform.position + (Vector3.down * 3.2f));
+	}
+#endif
 }

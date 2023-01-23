@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8580194166005435236
 MonoBehaviour:
@@ -44,6 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f966a1190ab0e4d84f1dc04fda5add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameUIElements:
+  - {fileID: 0}
+  menuUIElements:
+  - {fileID: 0}
+  - {fileID: 0}
+  baseGameElement: {fileID: 0}
+  baseMenuElement: {fileID: 0}
+  gameVolume: {fileID: 0}
+  menuVolume: {fileID: 0}
   waterPlane: {fileID: 0}
   highTideHight: 0
   lowTideHight: -1.8

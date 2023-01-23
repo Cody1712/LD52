@@ -5,7 +5,18 @@ using System;
 
 public class GameManager : Manager<GameManager>
 {
-	[Header("Positioning")]
+    public enum GameState { RUNNING, PAUSE};
+    public GameState gameState = GameState.RUNNING;
+
+    [SerializeField] List<GameObject> gameUIElements = new List<GameObject>();
+    [SerializeField] List<GameObject> menuUIElements = new List<GameObject>();
+    [SerializeField] GameObject baseGameElement;
+    [SerializeField] GameObject baseMenuElement;
+
+    [SerializeField] GameObject gameVolume;
+    [SerializeField] GameObject menuVolume;
+
+    [Header("Positioning")]
     [SerializeField] GameObject waterPlane;
     [SerializeField] float highTideHight = 1f;
     [SerializeField] float lowTideHight = -1f;
@@ -27,6 +38,7 @@ public class GameManager : Manager<GameManager>
     public float goldInventory;
     public float goldStash;
 
+
     public void Hurt()
 	{
         goldInventory -= 10f;
@@ -39,14 +51,77 @@ public class GameManager : Manager<GameManager>
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         StartCoroutine(WaitForNextTide(lowTideDuration));
+        CloseMenu();
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateWaterPosition();
-        ChangeTide();
+		if (gameState == GameState.RUNNING)
+		{
+            UpdateWaterPosition();
+            ChangeTide();
+        }
+
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			if (gameState == GameState.RUNNING)
+			{
+                OpenMenu();
+            }
+            else if (gameState == GameState.PAUSE)
+            {
+                CloseMenu();
+            }
+		}
+    }
+
+    private void OpenMenu()
+	{
+		foreach (GameObject g in gameUIElements)
+		{
+            g.SetActive(false);
+		}
+        foreach (GameObject g in menuUIElements)
+        {
+            g.SetActive(false);
+        }
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        gameVolume.SetActive(false);
+        menuVolume.SetActive(true);
+
+        baseMenuElement.SetActive(true);
+
+        gameState = GameState.PAUSE;
+    }
+
+    private void CloseMenu()
+	{
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        foreach (GameObject g in gameUIElements)
+        {
+            g.SetActive(false);
+        }
+        foreach (GameObject g in menuUIElements)
+        {
+            g.SetActive(false);
+        }
+
+        menuVolume.SetActive(false);
+        gameVolume.SetActive(true);
+
+        baseGameElement.SetActive(true);
+
+        gameState = GameState.RUNNING;
     }
 
 

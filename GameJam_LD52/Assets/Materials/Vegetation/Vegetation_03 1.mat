@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Vegetation_02
+  m_Name: Vegetation_03 1
   m_Shader: {fileID: -6465566751694194690, guid: 1072f139f468c614e82bba23ea142b0d,
     type: 3}
   m_Parent: {fileID: 0}
@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Main_Texture:
-        m_Texture: {fileID: 2800000, guid: 7283f07fc1abbf04798c05a88e97087e, type: 3}
+        m_Texture: {fileID: 2800000, guid: b550bc04ab329a44d8f78708c1505251, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -45,10 +45,10 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0
-    - _Speed: 1.2
+    - _Speed: 3
     - _Wind_Gradient_Power: 0.64
-    - _Wind_Scale: 0.45
-    - _Wind_Strenght: 0.4
+    - _Wind_Scale: 0.2
+    - _Wind_Strenght: 0.5
     m_Colors: []
   m_BuildTextureStacks: []
 --- !u!114 &5487617083187965192
