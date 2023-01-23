@@ -241,9 +241,20 @@ public class Fish_Behaviour : MonoBehaviour
 		{
             Vector3 spawnPos = this.transform.position - player.transform.position;
             spawnPos = spawnPos.normalized;
-            SpawnGold(this.transform.position + (spawnPos * 2f));
+            StartCoroutine(SpawnGoldAfterSeconds(this.transform.position + (spawnPos * 2.2f), 0.7f));
 		}
 	}
+
+    IEnumerator SpawnGoldAfterSeconds(Vector3 pos, float seconds)
+	{
+        yield return new WaitForSeconds(seconds);
+
+        float randomOffset = Random.Range(0f, 0.5f);
+
+        Vector3 dropPosition = new Vector3(pos.x + randomOffset, goldDropHight, pos.z + randomOffset);
+
+        ObjectPooler.Instance.SpawnFromPool("Gold_big", dropPosition, null, Quaternion.identity);
+    }
 
     void Hide()
 	{

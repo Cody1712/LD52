@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    [SerializeField] Transform pickPosition;
+
 	[Header("Movement")]    
     [SerializeField] float movementSpeed = 1f;
     [SerializeField] float sprintMultiplier = 1f;
@@ -189,12 +191,34 @@ public class CharacterController : MonoBehaviour
 
     void Pick()
     {
-        RaycastHit[] hits = Physics.SphereCastAll(this.transform.position, 2f, transform.forward);
-        foreach (RaycastHit hit in hits)
+        bool detectedFish = false;
+
+        //RaycastHit[] hits = Physics.SphereCastAll(this.transform.position, 1.5f, transform.forward);
+        Collider[] hitColliders = Physics.OverlapSphere(pickPosition.position, 1.5f);
+        foreach (Collider hitCollider in hitColliders)
         {
-            if (hit.collider.CompareTag("Fish"))
+            if (hitCollider.CompareTag("Fish"))
             {
-                hit.collider.GetComponent<Fish_Behaviour>().GettingPicked();
+                hitCollider.GetComponent<Fish_Behaviour>().GettingPicked();
+                ObjectPooler.Instance.SpawnFromPool("Pick_Fish_Sound", Vector3.zero, null, Quaternion.identity);
+                detectedFish = true;
+            }
+        }
+
+		if (!detectedFish)
+		{
+            //Check what sound to play
+            RaycastHit floorhit;
+            if (Physics.Raycast(this.transform.position + (Vector3.up * 3f), Vector3.down, out floorhit, 3.2f, footSoundLayers))
+            {
+                if (floorhit.collider.CompareTag("Terrain"))
+                {
+                    ObjectPooler.Instance.SpawnFromPool("Pick_Sand_Sound", Vector3.zero, null, Quaternion.identity);
+                }
+                else if (floorhit.collider.CompareTag("Water"))
+                {
+                    ObjectPooler.Instance.SpawnFromPool("Pick_Water_Sound", Vector3.zero, null, Quaternion.identity);
+                }
             }
         }
     }
@@ -288,10 +312,8 @@ public class CharacterController : MonoBehaviour
 
         if (Physics.Raycast(this.transform.position + (Vector3.up * 3f), Vector3.down, out hit, 3.2f, footSoundLayers))
 		{
-            Debug.Log(hit.collider.gameObject);
             if (hit.collider.CompareTag("Terrain")) 
             {
-                Debug.Log("HitTerrain");
                 isOnSand = true;
             }
 			else if(hit.collider.CompareTag("Water"))
