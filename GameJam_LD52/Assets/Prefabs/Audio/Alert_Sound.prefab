@@ -48,6 +48,8 @@ MonoBehaviour:
   audioSource: {fileID: 148581316970100652}
   pitchVariation: 0
   basePitch: 1
+  minPitchChange: -0.2
+  maxPitchChange: 0.25
 --- !u!82 &148581316970100652
 AudioSource:
   m_ObjectHideFlags: 0
@@ -61,7 +63,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 605152f3538d9804a9b2f57bd2e554df, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0

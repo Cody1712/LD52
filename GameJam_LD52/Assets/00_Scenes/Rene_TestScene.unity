@@ -5027,7 +5027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: agroRadius
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: goldDropHight
@@ -5035,7 +5035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: goldDropInterval
-      value: 8.5
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: wayPoints.Array.size
@@ -10137,8 +10137,13 @@ PrefabInstance:
       objectReference: {fileID: 81901818}
     - target: {fileID: 5695707663749539742, guid: bffc2ffd772f3354b80cc4ee893f83f8,
         type: 3}
+      propertyPath: agroRadius
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5695707663749539742, guid: bffc2ffd772f3354b80cc4ee893f83f8,
+        type: 3}
       propertyPath: goldDropInterval
-      value: 8.5
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 5695707663749539742, guid: bffc2ffd772f3354b80cc4ee893f83f8,
         type: 3}
@@ -10807,7 +10812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: agroRadius
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: goldDropHight
@@ -10815,7 +10820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: goldDropInterval
-      value: 8.5
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: wayPoints.Array.size
@@ -14540,8 +14545,13 @@ PrefabInstance:
       objectReference: {fileID: 81901818}
     - target: {fileID: 3639696428160541520, guid: 7266e21c217a70f48b27248b696247a3,
         type: 3}
+      propertyPath: agroRadius
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639696428160541520, guid: 7266e21c217a70f48b27248b696247a3,
+        type: 3}
       propertyPath: goldDropInterval
-      value: 4.5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 3639696428160541520, guid: 7266e21c217a70f48b27248b696247a3,
         type: 3}
@@ -17568,7 +17578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: agroRadius
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: goldDropHight
@@ -17576,7 +17586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: goldDropInterval
-      value: 8.5
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: wayPoints.Array.size
@@ -26596,8 +26606,13 @@ PrefabInstance:
       objectReference: {fileID: 81901818}
     - target: {fileID: 3639696428160541520, guid: 7266e21c217a70f48b27248b696247a3,
         type: 3}
+      propertyPath: agroRadius
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639696428160541520, guid: 7266e21c217a70f48b27248b696247a3,
+        type: 3}
       propertyPath: goldDropInterval
-      value: 8.5
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 3639696428160541520, guid: 7266e21c217a70f48b27248b696247a3,
         type: 3}
@@ -60809,8 +60824,13 @@ PrefabInstance:
       objectReference: {fileID: 81901818}
     - target: {fileID: 5695707663749539742, guid: bffc2ffd772f3354b80cc4ee893f83f8,
         type: 3}
+      propertyPath: agroRadius
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5695707663749539742, guid: bffc2ffd772f3354b80cc4ee893f83f8,
+        type: 3}
       propertyPath: goldDropInterval
-      value: 8.5
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 5695707663749539742, guid: bffc2ffd772f3354b80cc4ee893f83f8,
         type: 3}
@@ -70454,7 +70474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: agroRadius
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: goldDropHight
@@ -70462,7 +70482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: goldDropInterval
-      value: 8.5
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: wayPoints.Array.size
@@ -71746,8 +71766,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 81901818}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
+      propertyPath: agroRadius
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: goldDropInterval
-      value: 8.5
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: wayTransforms.Array.data[0]
@@ -82040,7 +82064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: agroRadius
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: goldDropHight
@@ -82048,7 +82072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: goldDropInterval
-      value: 8.5
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: wayPoints.Array.size
@@ -89548,8 +89572,13 @@ PrefabInstance:
       objectReference: {fileID: 81901818}
     - target: {fileID: 5695707663749539742, guid: bffc2ffd772f3354b80cc4ee893f83f8,
         type: 3}
+      propertyPath: agroRadius
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5695707663749539742, guid: bffc2ffd772f3354b80cc4ee893f83f8,
+        type: 3}
       propertyPath: goldDropInterval
-      value: 8.5
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 5695707663749539742, guid: bffc2ffd772f3354b80cc4ee893f83f8,
         type: 3}
@@ -89915,8 +89944,13 @@ PrefabInstance:
       objectReference: {fileID: 81901818}
     - target: {fileID: 5695707663749539742, guid: bffc2ffd772f3354b80cc4ee893f83f8,
         type: 3}
+      propertyPath: agroRadius
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5695707663749539742, guid: bffc2ffd772f3354b80cc4ee893f83f8,
+        type: 3}
       propertyPath: goldDropInterval
-      value: 8.5
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 5695707663749539742, guid: bffc2ffd772f3354b80cc4ee893f83f8,
         type: 3}
@@ -90447,7 +90481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: agroRadius
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: goldDropHight
@@ -90455,7 +90489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: goldDropInterval
-      value: 8.5
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 1547611022, guid: 86997759ea203e54eb86cc19648ba323, type: 3}
       propertyPath: wayPoints.Array.size
@@ -100275,8 +100309,13 @@ PrefabInstance:
       objectReference: {fileID: 81901818}
     - target: {fileID: 5695707663749539742, guid: bffc2ffd772f3354b80cc4ee893f83f8,
         type: 3}
+      propertyPath: agroRadius
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5695707663749539742, guid: bffc2ffd772f3354b80cc4ee893f83f8,
+        type: 3}
       propertyPath: goldDropInterval
-      value: 8.5
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 5695707663749539742, guid: bffc2ffd772f3354b80cc4ee893f83f8,
         type: 3}
@@ -100478,22 +100517,22 @@ PrefabInstance:
     - target: {fileID: 3107164477357403606, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9433511
+      value: 0.9428078
       objectReference: {fileID: 0}
     - target: {fileID: 3107164477357403606, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2007255
+      value: 0.20060991
       objectReference: {fileID: 0}
     - target: {fileID: 3107164477357403606, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.25840816
+      value: 0.26038352
       objectReference: {fileID: 0}
     - target: {fileID: 3107164477357403606, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.054983884
+      value: -0.0554042
       objectReference: {fileID: 0}
     - target: {fileID: 3107164477357403607, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
@@ -100508,7 +100547,7 @@ PrefabInstance:
     - target: {fileID: 3107164477370817102, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.7761984
+      value: 5.718601
       objectReference: {fileID: 0}
     - target: {fileID: 3107164477370817102, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
@@ -100518,47 +100557,47 @@ PrefabInstance:
     - target: {fileID: 3107164477370817102, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -105.736465
+      value: -105.70219
       objectReference: {fileID: 0}
     - target: {fileID: 3107164477370817102, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.93517894
+      value: 0.93464035
       objectReference: {fileID: 0}
     - target: {fileID: 3107164477370817102, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.23588629
+      value: 0.2357504
       objectReference: {fileID: 0}
     - target: {fileID: 3107164477370817102, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.25616965
+      value: 0.2581278
       objectReference: {fileID: 0}
     - target: {fileID: 3107164477370817102, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.06461534
+      value: -0.06510925
       objectReference: {fileID: 0}
     - target: {fileID: 3107164477816235825, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9394353
+      value: 0.9388942
       objectReference: {fileID: 0}
     - target: {fileID: 3107164477816235825, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.21831946
+      value: 0.21819372
       objectReference: {fileID: 0}
     - target: {fileID: 3107164477816235825, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.25733554
+      value: 0.25930268
       objectReference: {fileID: 0}
     - target: {fileID: 3107164477816235825, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.05980332
+      value: -0.06026049
       objectReference: {fileID: 0}
     - target: {fileID: 3107164477816235826, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
@@ -100588,22 +100627,22 @@ PrefabInstance:
     - target: {fileID: 3107164478070389958, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.935179
+      value: 0.93464035
       objectReference: {fileID: 0}
     - target: {fileID: 3107164478070389958, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.23588625
+      value: 0.23575039
       objectReference: {fileID: 0}
     - target: {fileID: 3107164478070389958, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.25616962
+      value: 0.2581278
       objectReference: {fileID: 0}
     - target: {fileID: 3107164478070389958, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.06461532
+      value: -0.065109245
       objectReference: {fileID: 0}
     - target: {fileID: 3107164478070389959, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
@@ -100618,7 +100657,7 @@ PrefabInstance:
     - target: {fileID: 3107164478216234625, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.7761984
+      value: 5.718601
       objectReference: {fileID: 0}
     - target: {fileID: 3107164478216234625, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
@@ -100628,7 +100667,7 @@ PrefabInstance:
     - target: {fileID: 3107164478216234625, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -105.736465
+      value: -105.70219
       objectReference: {fileID: 0}
     - target: {fileID: 3107164478216234626, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
@@ -100893,8 +100932,13 @@ PrefabInstance:
       objectReference: {fileID: 81901818}
     - target: {fileID: 3639696428160541520, guid: 7266e21c217a70f48b27248b696247a3,
         type: 3}
+      propertyPath: agroRadius
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639696428160541520, guid: 7266e21c217a70f48b27248b696247a3,
+        type: 3}
       propertyPath: goldDropInterval
-      value: 8.5
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 3639696428160541520, guid: 7266e21c217a70f48b27248b696247a3,
         type: 3}

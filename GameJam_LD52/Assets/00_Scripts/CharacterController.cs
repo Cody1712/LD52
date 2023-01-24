@@ -186,6 +186,7 @@ public class CharacterController : MonoBehaviour
         rb.velocity = new Vector3(0, rb.velocity.y, 0);
 
         animState = AnimationState.Hurt;
+        ObjectPooler.Instance.SpawnFromPool("Hurt_Sound", Vector3.zero, null, Quaternion.identity);
         StartCoroutine(AnimateMaterial(hurtMaterial, "_ManualIndex", 5, 3));
     }
 
@@ -348,7 +349,7 @@ public class CharacterController : MonoBehaviour
 
     #endregion
 
-#if UNITY_EDITOR
+#if UNITY_EDITORw
     private void OnDrawGizmos()
 	{
         Gizmos.color = Color.red;
