@@ -41,7 +41,7 @@ public class GameManager : Manager<GameManager>
 
     public void Hurt()
 	{
-        goldInventory -= 10f;
+        goldInventory -= 4f;
         if(goldInventory < 0)
 		{
             goldInventory = 0;
