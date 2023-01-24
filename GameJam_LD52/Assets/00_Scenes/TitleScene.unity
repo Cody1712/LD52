@@ -13690,6 +13690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66f3d574a425154c9440a4b0d5df366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gizmoDisplayHieght: 0.5
 --- !u!1001 &342023372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14175,7 +14176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69ca84ea7245744a96efd379c15ffaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeOutSpeed: 0.6
+  fadeOutSpeed: 0.8
 --- !u!225 &352109167
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -17815,7 +17816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69ca84ea7245744a96efd379c15ffaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeOutSpeed: 0.6
+  fadeOutSpeed: 0.8
 --- !u!225 &446439417
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -24935,6 +24936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66f3d574a425154c9440a4b0d5df366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gizmoDisplayHieght: 0.5
 --- !u!1001 &630129937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43056,6 +43058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66f3d574a425154c9440a4b0d5df366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gizmoDisplayHieght: 0.5
 --- !u!1 &1076203243
 GameObject:
   m_ObjectHideFlags: 0
@@ -64610,6 +64613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66f3d574a425154c9440a4b0d5df366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gizmoDisplayHieght: 0.5
 --- !u!1001 &1564443406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65987,6 +65991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66f3d574a425154c9440a4b0d5df366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gizmoDisplayHieght: 0.5
 --- !u!1001 &1593019642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68259,6 +68264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66f3d574a425154c9440a4b0d5df366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gizmoDisplayHieght: 0.5
 --- !u!1001 &1648554168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83289,6 +83295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66f3d574a425154c9440a4b0d5df366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gizmoDisplayHieght: 0.5
 --- !u!1001 &2038841540
 PrefabInstance:
   m_ObjectHideFlags: 0

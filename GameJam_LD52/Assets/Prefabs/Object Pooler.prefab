@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3104998941914310607
 MonoBehaviour:
@@ -48,20 +48,36 @@ MonoBehaviour:
   - tag: Gold_big
     prefab: {fileID: 5873389226799711791, guid: ad52acf725ed8d84ca87b00a5f435acd,
       type: 3}
-    count: 200
+    count: 300
   - tag: Gold_medium
     prefab: {fileID: 8216706268549711124, guid: e552362ebfdf4e740b36ad0258544a97,
       type: 3}
-    count: 200
+    count: 300
   - tag: Gold_small
     prefab: {fileID: 7923946117766452695, guid: decaca3c2a7430c4db9b8a9f508a18c4,
       type: 3}
-    count: 200
+    count: 300
   - tag: Gold_Collect_Sound
     prefab: {fileID: 4131619072360584516, guid: adf29c2de65955c44bead00adce716c0,
       type: 3}
-    count: 40
+    count: 100
   - tag: Alert_Sound
     prefab: {fileID: 4131619072360584516, guid: 75b3dc8c401202945bc8a601fa0e24ba,
       type: 3}
     count: 40
+  - tag: Pick_Water_Sound
+    prefab: {fileID: 4131619072360584516, guid: 6ef6ce100802a3b4da934f35d51ec7c0,
+      type: 3}
+    count: 10
+  - tag: Pick_Sand_Sound
+    prefab: {fileID: 4131619072360584516, guid: 6b96418efbc1a7d4a9200cd1bed1bffb,
+      type: 3}
+    count: 10
+  - tag: Pick_Fish_Sound
+    prefab: {fileID: 4131619072360584516, guid: 1e25dbbe3b715fc449b49df775db0ae0,
+      type: 3}
+    count: 20
+  - tag: Hurt_Sound
+    prefab: {fileID: 4131619072360584516, guid: 5f8bb65122a6bf0458c163be1e2bec78,
+      type: 3}
+    count: 10

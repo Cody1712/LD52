@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f966a1190ab0e4d84f1dc04fda5add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameState: 0
   gameUIElements:
   - {fileID: 0}
   menuUIElements:
@@ -58,7 +59,7 @@ MonoBehaviour:
   lowTideHight: -1.8
   waterSinkingTime: 0.5
   waterRisingTime: 0.13
-  highTideDuration: 50
-  lowTideDuration: 30
+  highTideDuration: 45
+  lowTideDuration: 25
   goldInventory: 0
   goldStash: 0
