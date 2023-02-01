@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] Transform pickPosition;
 
@@ -43,6 +43,9 @@ public class CharacterController : MonoBehaviour
     private AudioSource walkAudioPlayer;
     private bool isOnSand;
 
+    [Header("Interaction")]
+    [SerializeField] float interactionRadius = 1;
+    private BobBehaviour bobInteraction;
 
 
 
@@ -73,6 +76,15 @@ public class CharacterController : MonoBehaviour
             movementInputDirection = Vector3.zero;
         }
 
+        if (Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.gameState != GameManager.GameState.DIALOGUE)
+        {
+            HandleInteraction();
+        }else
+        if (Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.gameState == GameManager.GameState.DIALOGUE)
+        {
+            bobInteraction.EndInteraction();
+        }
+
         CheckRotation();
 
         HandleAnimation();
@@ -101,8 +113,9 @@ public class CharacterController : MonoBehaviour
             walkMaterial.SetFloat("_Speed_in_Fps", 9f);
         }
 
-		if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
-		{
+        //if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
+        {
 			if (!isInteracting)
 			{
                 isInteracting = true;
@@ -114,6 +127,18 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+    private void HandleInteraction()
+	{
+        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, interactionRadius);
+        foreach (Collider hitCollider in hitColliders)
+        {
+            if (hitCollider.CompareTag("Interactable"))
+            {
+                bobInteraction = hitCollider.GetComponent<BobBehaviour>();
+                bobInteraction.StartInteraction(this.transform.position);
+            }
+        }
+    }
 
     #region Movement
     private Vector3 GetMovementInputDirection()
@@ -349,11 +374,14 @@ public class CharacterController : MonoBehaviour
 
     #endregion
 
-#if UNITY_EDITORw
+#if UNITY_EDITOR
     private void OnDrawGizmos()
 	{
+        //Gizmos.color = Color.red;
+        //Gizmos.DrawLine(this.transform.position + (Vector3.up * 3f), this.transform.position + (Vector3.down * 3.2f));
+
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(this.transform.position + (Vector3.up * 3f), this.transform.position + (Vector3.down * 3.2f));
+        Gizmos.DrawWireSphere(this.transform.position, interactionRadius);
 	}
 #endif
 }

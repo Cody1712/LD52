@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a573c5f8fd1ce4c468b90bcaec61f01c,
         type: 3}
       propertyPath: m_Name
-      value: Seagull
+      value: Seagull Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a573c5f8fd1ce4c468b90bcaec61f01c,
         type: 3}
@@ -86,6 +86,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1107694078996103711}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a573c5f8fd1ce4c468b90bcaec61f01c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1088825733244755785}
   m_SourcePrefab: {fileID: 100100000, guid: a573c5f8fd1ce4c468b90bcaec61f01c, type: 3}
 --- !u!1 &376994363923203451 stripped
 GameObject:
@@ -105,3 +109,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 734b5540766682547bbd118a57d39e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldFlyToPosition: {fileID: 0}
+  seagullStart: {fileID: 0}
+  seagullEnd: {fileID: 0}
+--- !u!114 &1088825733244755785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376994363923203451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c419e035bc0bdd3449aff371ada8c3b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRotationSpeed: 1

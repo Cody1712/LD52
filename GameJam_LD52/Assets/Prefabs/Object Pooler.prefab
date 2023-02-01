@@ -81,3 +81,18 @@ MonoBehaviour:
     prefab: {fileID: 4131619072360584516, guid: 5f8bb65122a6bf0458c163be1e2bec78,
       type: 3}
     count: 10
+  - tag: Gold_Visual_01
+    prefab: {fileID: 5873389226799711791, guid: b3caca902aea6b946abd5665560e17b5,
+      type: 3}
+    count: 40
+  - tag: Gold_Visual_02
+    prefab: {fileID: 8216706268549711124, guid: 6313c21bd85fbf149a8c6f9dc565adb5,
+      type: 3}
+    count: 40
+  - tag: Gold_Visual_03
+    prefab: {fileID: 7923946117766452695, guid: b1d26aa755e6b1c419313d9472526290,
+      type: 3}
+    count: 40
+  - tag: Seagull
+    prefab: {fileID: 376994363923203451, guid: b1d039b33af283e47a4bf489f7f8c212, type: 3}
+    count: 40

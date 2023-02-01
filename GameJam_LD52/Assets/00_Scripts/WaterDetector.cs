@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class WaterDetector : MonoBehaviour
 {
-	private CharacterController playerController;
-	public void SetPlayer(CharacterController player)
+	private PlayerController playerController;
+	public void SetPlayer(PlayerController player)
 	{
 		playerController = player;
 	}

@@ -2,12 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using DG.Tweening;
 
 public class GameManager : Manager<GameManager>
 {
-    public enum GameState { RUNNING, PAUSE};
+    public enum GameState { RUNNING, PAUSE, DIALOGUE};
     public GameState gameState = GameState.RUNNING;
 
+    [Header("Positions")]
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject bobTheBird;
+    [SerializeField] Transform goldFlyToPosition;
+    [SerializeField] GameObject seagull;
+    List<GameObject> droppedGold = new List<GameObject>();
+
+
+    [Header("UI")]
     [SerializeField] List<GameObject> gameUIElements = new List<GameObject>();
     [SerializeField] List<GameObject> menuUIElements = new List<GameObject>();
     [SerializeField] GameObject baseGameElement;
@@ -35,13 +45,13 @@ public class GameManager : Manager<GameManager>
 
 
     [Header("Gold")]
-    public float goldInventory;
-    public float goldStash;
+    public int goldInventory;
+    public int goldStash;
 
 
     public void Hurt()
 	{
-        goldInventory -= 4f;
+        goldInventory -= 4;
         if(goldInventory < 0)
 		{
             goldInventory = 0;
@@ -80,7 +90,62 @@ public class GameManager : Manager<GameManager>
 		}
     }
 
-    private void OpenMenu()
+    public void SpendGold()
+	{
+		if (goldInventory != 0)
+		{
+            StartCoroutine(SpendGoldOverTime(goldInventory));
+        }
+    }
+
+    public void CollectedGold()
+	{
+		foreach (GameObject g in droppedGold)
+		{
+            g.SetActive(false);
+		}
+        droppedGold.Clear();
+    }
+
+    IEnumerator SpendGoldOverTime(int oldGoldInventory)
+	{
+        for (int i = 0; i < oldGoldInventory; i++)
+        {
+            goldStash += 1;
+            goldInventory -= 1;
+
+            int randomNumber = UnityEngine.Random.Range(1, 3);
+            string randomGoldVisual = "";
+            if (randomNumber == 1)
+            {
+                randomGoldVisual = "Gold_Visual_01";
+            }
+            else if (randomNumber == 2)
+            {
+                randomGoldVisual = "Gold_Visual_02";
+            }
+            else
+            {
+                randomGoldVisual = "Gold_Visual_03";
+            }
+            Vector3 randomOffset = new Vector3(UnityEngine.Random.Range(0, 0.5f), UnityEngine.Random.Range(0, 0.5f), UnityEngine.Random.Range(0, 0.5f));
+            GameObject newGold = ObjectPooler.Instance.SpawnFromPool(randomGoldVisual, player.transform.position + Vector3.up, null, Quaternion.identity);
+            newGold.transform.DOMove(goldFlyToPosition.position + randomOffset, 0.5f).SetEase(Ease.OutSine);
+
+            droppedGold.Add(newGold);
+
+            //GameObject newSeagull = ObjectPooler.Instance.SpawnFromPool("Seagull", seagullStart.position, null, Quaternion.identity);
+            //newSeagull.transform.DOMove(seagullEnd.position,1);
+
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        seagull.GetComponent<CollectingSeagull>().Collect();
+        goldInventory = 0;
+    }
+
+	#region Menu
+	private void OpenMenu()
 	{
 		foreach (GameObject g in gameUIElements)
 		{
@@ -123,9 +188,10 @@ public class GameManager : Manager<GameManager>
 
         gameState = GameState.RUNNING;
     }
+	#endregion
 
-
-    void UpdateWaterPosition()
+	#region Tidle change
+	void UpdateWaterPosition()
 	{
 		if (isHighTide)
 		{
@@ -182,6 +248,7 @@ public class GameManager : Manager<GameManager>
             onLowTide.Invoke();
         }
     }
+	#endregion
 
 
 

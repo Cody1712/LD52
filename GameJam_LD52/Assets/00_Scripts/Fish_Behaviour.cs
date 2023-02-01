@@ -130,7 +130,7 @@ public class Fish_Behaviour : MonoBehaviour
 
 			if (moveDir.magnitude < 1.5f)
 			{
-                player.GetComponent<CharacterController>().Hurt();
+                player.GetComponent<PlayerController>().Hurt();
                 GameManager.Instance.Hurt() ;
                 canHunt = false;
                 StartCoroutine(WaitforNextHunt(3));
