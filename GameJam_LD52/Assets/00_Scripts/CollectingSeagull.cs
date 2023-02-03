@@ -32,6 +32,8 @@ public class CollectingSeagull : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         StartCoroutine(AnimateMaterial(seagullMaterial, "_ManualIndex",12,6));
 
+        GameManager.Instance.allTheGoldCollected += AllGoldCollected;
+
         activeWayPointIndex = 0;
         activeWaypoint = wayPoints[activeWayPointIndex].position;
         this.transform.position = activeWaypoint;
@@ -46,6 +48,15 @@ public class CollectingSeagull : MonoBehaviour
 		{
             MoveToWayPoint();
         }
+    }
+
+    private void AllGoldCollected()
+	{
+        //this.gameObject.SetActive(false);
+	}
+    private void OnDisable()
+    {
+        GameManager.Instance.allTheGoldCollected -= AllGoldCollected;
     }
 
     public void Collect()
@@ -78,6 +89,7 @@ public class CollectingSeagull : MonoBehaviour
         {
 			if (activeWayPointIndex == 1)
 			{
+                ObjectPooler.Instance.SpawnFromPool("Gold_Collect_Sound", Vector3.zero , null, Quaternion.identity);
                 GameManager.Instance.CollectedGold();
 			}
 

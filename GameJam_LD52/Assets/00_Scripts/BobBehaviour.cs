@@ -16,11 +16,16 @@ public class BobBehaviour : MonoBehaviour
     [SerializeField] float dialogueSpeed;
     private string activeDialogue;
 
+    [Header("Spawn Nest")]
+    [SerializeField] GameObject nest;
+    [SerializeField] GameObject puffParticleSystem;
+
 
     // Start is called before the first frame update
     void Start()
     {
         activeDialogue = dialogueData.dialogueOption[0];
+        GameManager.Instance.allTheGoldCollected += AllGoldCollected;
     }
 
     // Update is called once per frame
@@ -29,11 +34,24 @@ public class BobBehaviour : MonoBehaviour
 		
     }
 
+    private void AllGoldCollected()
+    {
+        puffParticleSystem.SetActive(true);
+        puffParticleSystem.GetComponent<ParticleSystem>().Play();
+        nest.SetActive(true);
+        this.gameObject.SetActive(false);
+    }
+    private void OnDisable()
+    {
+        GameManager.Instance.allTheGoldCollected -= AllGoldCollected;
+    }
+
     public void StartInteraction(Vector3 playerPos)
 	{
         Vector3 heightOffsetVector = new Vector3(0,heightOffset,0);
         lookAtTarget.position = ((this.transform.position + heightOffsetVector) + (playerPos + heightOffsetVector)) / 2;
         GameManager.Instance.gameState = GameManager.GameState.DIALOGUE;
+        ObjectPooler.Instance.SpawnFromPool("Dialogue_Sound",Vector3.zero, null, Quaternion.identity);
         HandleDialogue();
     }
 

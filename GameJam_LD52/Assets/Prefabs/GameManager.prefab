@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8580194166005435236
 MonoBehaviour:
@@ -45,9 +45,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
+  player: {fileID: 0}
+  bobTheBird: {fileID: 0}
+  goldFlyToPosition: {fileID: 0}
+  seagull: {fileID: 0}
   gameUIElements:
   - {fileID: 0}
   menuUIElements:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   baseGameElement: {fileID: 0}
@@ -63,3 +68,4 @@ MonoBehaviour:
   lowTideDuration: 25
   goldInventory: 0
   goldStash: 0
+  gooldNeeded: 100

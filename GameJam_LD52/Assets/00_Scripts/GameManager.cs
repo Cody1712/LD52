@@ -43,10 +43,14 @@ public class GameManager : Manager<GameManager>
     public event Action onHighTide;
     public event Action onLowTide;
 
+    public event Action allTheGoldCollected;
+
 
     [Header("Gold")]
     public int goldInventory;
     public int goldStash;
+    [SerializeField] int gooldNeeded = 150;
+    private bool isNestBuild = false;
 
 
     public void Hurt()
@@ -88,6 +92,13 @@ public class GameManager : Manager<GameManager>
                 CloseMenu();
             }
 		}
+
+		if (goldStash == gooldNeeded && !isNestBuild)
+		{
+            isNestBuild = true;
+            ObjectPooler.Instance.SpawnFromPool("Victory_Sound", Vector3.zero, null, Quaternion.identity);
+            allTheGoldCollected.Invoke();
+		}
     }
 
     public void SpendGold()
@@ -95,6 +106,7 @@ public class GameManager : Manager<GameManager>
 		if (goldInventory != 0)
 		{
             StartCoroutine(SpendGoldOverTime(goldInventory));
+            goldInventory = 0;
         }
     }
 
@@ -109,10 +121,11 @@ public class GameManager : Manager<GameManager>
 
     IEnumerator SpendGoldOverTime(int oldGoldInventory)
 	{
+        int goldreducing = oldGoldInventory;
         for (int i = 0; i < oldGoldInventory; i++)
         {
             goldStash += 1;
-            goldInventory -= 1;
+            goldreducing -= 1;
 
             int randomNumber = UnityEngine.Random.Range(1, 3);
             string randomGoldVisual = "";
@@ -137,7 +150,7 @@ public class GameManager : Manager<GameManager>
             //GameObject newSeagull = ObjectPooler.Instance.SpawnFromPool("Seagull", seagullStart.position, null, Quaternion.identity);
             //newSeagull.transform.DOMove(seagullEnd.position,1);
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
 
         seagull.GetComponent<CollectingSeagull>().Collect();
