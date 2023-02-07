@@ -96161,13 +96161,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a573c5f8fd1ce4c468b90bcaec61f01c,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a573c5f8fd1ce4c468b90bcaec61f01c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a573c5f8fd1ce4c468b90bcaec61f01c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a573c5f8fd1ce4c468b90bcaec61f01c,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a573c5f8fd1ce4c468b90bcaec61f01c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.122
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a573c5f8fd1ce4c468b90bcaec61f01c,
         type: 3}
@@ -116610,12 +116625,12 @@ PrefabInstance:
     - target: {fileID: 3107164477357403606, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.18974067
+      value: 0.1897407
       objectReference: {fileID: 0}
     - target: {fileID: 3107164477357403606, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.049574167
+      value: -0.049574178
       objectReference: {fileID: 0}
     - target: {fileID: 3107164477357403607, guid: 9268be22bc01a8846ada67d36424cf3b,
         type: 3}
@@ -117303,6 +117318,11 @@ PrefabInstance:
       propertyPath: waterPlane
       value: 
       objectReference: {fileID: 1316205488}
+    - target: {fileID: 8580194166005435236, guid: 030b2842c1e1ed646a229baf1fab63a2,
+        type: 3}
+      propertyPath: gooldNeeded
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 8580194166005435236, guid: 030b2842c1e1ed646a229baf1fab63a2,
         type: 3}
       propertyPath: baseGameElement

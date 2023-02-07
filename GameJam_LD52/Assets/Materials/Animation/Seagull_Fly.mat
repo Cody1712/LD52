@@ -56,7 +56,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha_Clipping: 0.5
-    - _ManualIndex: 4
+    - _ManualIndex: 5
     - _ManualOverride: 1
     - _Max_Frames: 6
     - _Outline_Thickness: 0.3

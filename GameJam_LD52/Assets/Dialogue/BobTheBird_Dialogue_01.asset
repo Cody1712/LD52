@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BobTheBird_Dialogue_01
   m_EditorClassIdentifier: 
   dialogueOption:
-  - Oh hi, I am the onl.. best construction bird around. I can build you a nest for
-    100 shiny! Gimme Gimme!
+  - Oh hi, I am the best best construction bird around. I can build you a nest for
+    60 shiny! Gimme Gimme!
   - "Bob can build it! \nBob's the best!\nBob can build it! \nBob's the best!\nUh
     yeah!"
